@@ -1,0 +1,54 @@
+
+
+.main {
+	width: 100%;
+	border-style: double;
+	border-width: 1px;
+	border-color: black;
+}
+
+.title {
+	width: calc(100% - 2px);
+	align-self: stretch;
+	text-align: center;
+}
+
+[class*="group"] {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.group-1 {
+	width: calc(100% - 2px);
+	align-items: center;
+}
+
+.group-2 {
+	width: calc(50% - 2px);
+	align-items: center;
+}
+
+.group-3 {
+	width: calc(33% - 2px);
+	align-items:stretch;
+}
+
+.option {
+	/* max-width: calc(50% - 2px);
+	min-width: calc(20% - 2px); */
+	flex: 1 0 calc(20% - 2px);
+	align-self: center;
+}
+
+.center {
+	text-align: center;
+}
+
+div {
+	/* padding: 3px; */
+	margin: 1px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	box-sizing: border-box;
+}
