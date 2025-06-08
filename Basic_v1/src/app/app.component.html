@@ -1,20 +1,18 @@
 <div class="main group">
-		<div class="title">
-	<h1>Character Creator Test</h1>
-		</div>
+	<div class="title">
+		<h1>Character Creator Test</h1>
+	</div>
 	<br>
 	<div class="group-1">
 		<div class="title">
 			<h3>Gender</h3>
 		</div>
-		<!-- <div class="option center">
-			<span>Male</span>
-		</div>
-		<div class="option center">
-			<span>Female</span>
-		</div> -->
-		<app-maker-option class="option center" OptionText="Male"></app-maker-option>
-		<app-maker-option class="option center" OptionText="Female"></app-maker-option>
+		<div></div>
+		<app-option-item *ngFor="let gender of genders"
+						 [Option]="gender"
+						 class="option center"></app-option-item>
+		<!-- <app-option-item class="option center" OptionText="Male"></app-option-item>
+		<app-option-item class="option center" OptionText="Female"></app-option-item> -->
 	</div>
 	<div class="group-2">
 		<div class="title">

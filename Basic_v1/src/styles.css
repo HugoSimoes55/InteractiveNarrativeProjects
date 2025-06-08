@@ -1,5 +1,3 @@
-
-
 .main {
 	width: 100%;
 	border-style: double;
@@ -30,7 +28,7 @@
 
 .group-3 {
 	width: calc(33% - 2px);
-	align-items:stretch;
+	align-items: stretch;
 }
 
 .option {
