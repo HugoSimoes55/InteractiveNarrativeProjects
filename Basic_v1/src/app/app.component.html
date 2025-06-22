@@ -5,14 +5,17 @@
 	<br>
 	<div class="group-1">
 		<div class="title">
-			<h3>Gender</h3>
+			<h2>Gender</h2>
 		</div>
-		<div></div>
-		<app-option-item *ngFor="let gender of genders"
+		<app-option-item *ngFor="let gender of this.genders"
 						 [Option]="gender"
 						 class="option center"></app-option-item>
 		<!-- <app-option-item class="option center" OptionText="Male"></app-option-item>
 		<app-option-item class="option center" OptionText="Female"></app-option-item> -->
+		<!-- <div *ngFor="let gender of genders">
+			<app-option-item [Option]="gender"
+							 class="option center"></app-option-item>
+		</div> -->
 	</div>
 	<div class="group-2">
 		<div class="title">
@@ -41,7 +44,10 @@
 		<div class="title">
 			<h3>Eye Color</h3>
 		</div>
-		<div class="option center">
+		<app-option-item *ngFor="let eye of this.eyeColors"
+						 [Option]="eye"
+						 class="option center"></app-option-item>
+		<!-- <div class="option center">
 			<span>Red</span>
 		</div>
 		<div class="option center">
@@ -64,6 +70,6 @@
 		</div>
 		<div class="option center">
 			<span>Multicolor</span>
-		</div>
+		</div> -->
 	</div>
 </div>

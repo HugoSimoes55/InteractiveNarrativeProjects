@@ -1,4 +1,5 @@
 export enum OptionGroupsEnum {
-	Gender,
-	HairColor
+	Gender = "Gender",
+	HairColor = "HairColor",
+	EyeColor = "EyeColor"
 }

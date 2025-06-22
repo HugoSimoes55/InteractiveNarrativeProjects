@@ -1,3 +1,11 @@
 <div>
-	<span>{{ option.DisplayText }}</span>
+	<span style="font-size: 24px;">{{ option.DisplayText }}</span>
+	<br>
+	<div *ngIf="option.hasImage"
+		 class="clearBorder center image-control"
+		 [style.height]="option.MaxHeight + 'px'"
+		 [style.width]="option.MaxHeight + 'px'">
+		<img src="{{ option.LocalImageURL ? option.LocalImageURL : option.OnlineImageURL }}"
+			 alt="{{ option.DisplayText }}">
+	</div>
 </div>

@@ -1,14 +1,20 @@
 export class GeneralOptionModel {
 
-	// public ID: number;
-	// public DisplayText: string;
-	// public OnlineImageURL: string;
-	// public LocalImageURL: string;
+	public hasImage: boolean;
+	public LocalImageURL?: string;
 
-	constructor(public ID: number, public DisplayText: string, public OnlineImageURL: string, public LocalImageURL: string) {
-		// this.ID = id;
-		// this.DisplayText = displayText;
-		// this.OnlineImageURL = onlineURL;
-		// this.LocalImageURL = localURL;
+	constructor(
+		public ID: number,
+		public DisplayText: string,
+		public OnlineImageURL?: string,
+		LocalImage?: string,
+		public MaxHeight: number = 400,
+		public MaxWidth: number = 400) {
+
+		this.hasImage = OnlineImageURL || LocalImage ? true : false;
+
+		if (LocalImage) {
+			this.LocalImageURL = "assets/images/" + LocalImage;
+		}
 	}
 }
