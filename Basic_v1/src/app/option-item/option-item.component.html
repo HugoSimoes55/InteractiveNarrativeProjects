@@ -1,4 +1,4 @@
-<div>
+<div #optionRoot (click)="onSelectOption()" [ngClass]="{'selected': OptionSelected}">
 	<span style="font-size: 24px;">{{ option.DisplayText }}</span>
 	<br>
 	<div *ngIf="option.hasImage"

@@ -10,66 +10,45 @@
 		<app-option-item *ngFor="let gender of this.genders"
 						 [Option]="gender"
 						 class="option center"></app-option-item>
-		<!-- <app-option-item class="option center" OptionText="Male"></app-option-item>
-		<app-option-item class="option center" OptionText="Female"></app-option-item> -->
-		<!-- <div *ngFor="let gender of genders">
-			<app-option-item [Option]="gender"
-							 class="option center"></app-option-item>
-		</div> -->
 	</div>
-	<div class="group-2">
+	<div class="group-1">
 		<div class="title">
-			<h3>Hair Color</h3>
+			<h2>Hair Color</h2>
 		</div>
-		<div class="option center">
-			<span>Blond</span>
-		</div>
-		<div class="option center">
-			<span>Brunette</span>
-		</div>
-		<div class="option center">
-			<span>Redhead</span>
-		</div>
-		<div class="option center">
-			<span>Pink</span>
-		</div>
-		<div class="option center">
-			<span>Blue</span>
-		</div>
-		<div class="option center">
-			<span>Rainbow</span>
-		</div>
+		<app-option-item *ngFor="let hair of this.hairColors"
+						 [Option]="hair"
+						 class="option center"></app-option-item>
 	</div>
-	<div class="group-2">
+	<div class="group-1">
 		<div class="title">
-			<h3>Eye Color</h3>
+			<h2>Eye Color</h2>
 		</div>
 		<app-option-item *ngFor="let eye of this.eyeColors"
 						 [Option]="eye"
 						 class="option center"></app-option-item>
-		<!-- <div class="option center">
-			<span>Red</span>
+	</div>
+	<div class="group-1">
+		<div class="title">
+			<h2>Body Type</h2>
 		</div>
-		<div class="option center">
-			<span>Blue</span>
+
+		
+	</div>
+	<div class="group-1">
+		<div class="title">
+			<h2>Origin</h2>
 		</div>
-		<div class="option center">
-			<span>Green</span>
+
+		Countryside
+		Big City
+		Slums
+		Hermit
+	</div>
+	<div class="group-1">
+		<div class="title">
+			<h2>Skills</h2>
 		</div>
-		<div class="option center">
-			<span>Brown</span>
-		</div>
-		<div class="option center">
-			<span>Yellow</span>
-		</div>
-		<div class="option center">
-			<span>Pink</span>
-		</div>
-		<div class="option center">
-			<span>Purple</span>
-		</div>
-		<div class="option center">
-			<span>Multicolor</span>
-		</div> -->
+
+		
 	</div>
 </div>

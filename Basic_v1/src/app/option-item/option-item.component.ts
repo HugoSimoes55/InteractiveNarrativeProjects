@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { GeneralOptionModel } from '../models/general-option.model';
 import { CommonModule } from '@angular/common';
 
@@ -10,7 +10,10 @@ import { CommonModule } from '@angular/common';
 	styleUrl: './option-item.component.css'
 })
 export class OptionItemComponent implements OnInit {
+	@ViewChild("optionRoot") root: ElementRef;
 	@Input("Option") option: GeneralOptionModel;
+
+	OptionSelected: boolean = false;
 
 	constructor() {
 
@@ -18,5 +21,9 @@ export class OptionItemComponent implements OnInit {
 
 	ngOnInit(): void {
 
+	}
+
+	onSelectOption() {
+		this.OptionSelected = !this.OptionSelected;
 	}
 }

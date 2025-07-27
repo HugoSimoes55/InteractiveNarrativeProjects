@@ -1,9 +1,14 @@
-Prevent vertical flex box stretching on parallel groups
+DONE - Prevent vertical flex box stretching on parallel groups
 
 Add multiple option display types
+Add options with narrative texts
 
 Add colors to background, Groups and Options
-Add colors for selected and not selected Options
+DONE - Add colors for selected and not selected Options
+
+Add single group selected
+
+Add default "No Image" image
 
 Create json file to hold data
 Move data from APP Component to Json file
