@@ -1,13 +1,15 @@
-export class GeneralOptionModel {
+export class GeneralOptionItemModel {
 
-	public hasImage: boolean;
 	public LocalImageURL?: string;
 
 	private EmptyImage: string = "assets/images/NoImageAvailable.png";
+	public ImageToShow: string;
 
 	constructor(
 		public ID: number,
-		public DisplayText: string,
+		public Title: string,
+		public FlavourText: string,
+		public hasImage: boolean,
 		public OnlineImageURL?: string,
 		LocalImage?: string,
 		public MaxHeight: number = 400,
@@ -21,15 +23,17 @@ export class GeneralOptionModel {
 			LocalImage = "";
 		}
 
-		this.hasImage = OnlineImageURL != "" || LocalImage != "" ? true : false;
-
 		if (LocalImage) {
 			this.LocalImageURL = "assets/images/" + LocalImage;
+			this.ImageToShow = this.LocalImageURL;
 		}
 
-		if (this.hasImage
-			&& (this.OnlineImageURL + this.LocalImageURL) == "") {
-			this.LocalImageURL = this.EmptyImage;
+		if (this.OnlineImageURL) {
+			this.ImageToShow  = this.OnlineImageURL;
+		}
+
+		if(!this.ImageToShow){
+			this.ImageToShow = this.EmptyImage;
 		}
 	}
 }

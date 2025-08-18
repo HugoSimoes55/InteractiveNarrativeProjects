@@ -1,11 +1,15 @@
-<div #optionRoot (click)="onSelectOption()" [ngClass]="{'selected': OptionSelected}">
-	<span style="font-size: 24px;">{{ option.DisplayText }}</span>
+<div #optionRoot
+	 (click)="onSelectOption()"
+	 [ngClass]="{'selected': OptionSelected}">
+	<span style="font-size: 24px;">{{ option.Title }}</span>
 	<br>
 	<div *ngIf="option.hasImage"
 		 class="clearBorder center image-control"
 		 [style.height]="option.MaxHeight + 'px'"
 		 [style.width]="option.MaxHeight + 'px'">
-		<img src="{{ option.LocalImageURL ? option.LocalImageURL : option.OnlineImageURL }}"
+		<img src="{{ option.ImageToShow }}"
 			 alt="{{ option.DisplayText }}">
 	</div>
+	<br>
+	<span *ngIf="option.FlavourText">{{ option.FlavourText }}</span>
 </div>

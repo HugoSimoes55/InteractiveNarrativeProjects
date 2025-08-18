@@ -3,9 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { OptionItemComponent } from './option-item/option-item.component';
 import { Title } from '@angular/platform-browser';
 import { OptionsService } from './services/options.service';
-import { GeneralOptionModel } from './models/general-option.model';
+import { GeneralOptionItemModel } from './models/general-option.model';
 import { OptionGroupsEnum } from './models/option-groups.enum';
 import { CommonModule } from '@angular/common';
+import { OptionGroupComponent } from './option-group/option-group.component';
+import { GeneralOptionGroupModel } from './models/general-option-group.model';
 
 @Component({
 	selector: 'app-root',
@@ -13,6 +15,7 @@ import { CommonModule } from '@angular/common';
 	imports: [
 		RouterOutlet,
 		OptionItemComponent,
+		OptionGroupComponent,
 		CommonModule
 	],
 	templateUrl: './app.component.html',
@@ -21,9 +24,7 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent implements OnInit {
 	title = 'CYOA Basic v1';
-	genders: GeneralOptionModel[] = [];
-	eyeColors: GeneralOptionModel[] = [];
-	hairColors: GeneralOptionModel[] = [];
+	optionGroup: GeneralOptionGroupModel[] = [];
 
 	constructor(private titleService: Title, private optionServ: OptionsService) {
 		this.titleService.setTitle(this.title);
@@ -31,58 +32,69 @@ export class AppComponent implements OnInit {
 
 	ngOnInit() {
 		this.SimulateData();
-
-		// Get Data
-		this.genders = this.optionServ.GetOptions(OptionGroupsEnum.Gender);
-		this.eyeColors = this.optionServ.GetOptions(OptionGroupsEnum.EyeColor);
-		this.hairColors = this.optionServ.GetOptions(OptionGroupsEnum.HairColor);
 	}
 
 	SimulateData() {
-		let aux: GeneralOptionModel[];
+		let groupAux: GeneralOptionGroupModel;
+		let optionAux: GeneralOptionItemModel[];
 
 		// Gender Data
-		aux = [];
+		groupAux = null;
+		optionAux = [];
 
 		let defaultGenderMeasure: number = 500;
 
-		aux.push(new GeneralOptionModel(1, "Male", this.MaleGenderURL, this.MaleGenderLocal, defaultGenderMeasure, defaultGenderMeasure));
-		aux.push(new GeneralOptionModel(2, "Female", this.FemaleGenderURL, null, defaultGenderMeasure, defaultGenderMeasure));
+		optionAux.push(new GeneralOptionItemModel(1, "Male", null, true, this.MaleGenderURL, this.MaleGenderLocal, defaultGenderMeasure, defaultGenderMeasure));
+		optionAux.push(new GeneralOptionItemModel(2, "Female", null, true, this.FemaleGenderURL, null, defaultGenderMeasure, defaultGenderMeasure));
 
-		this.optionServ.SetOption(OptionGroupsEnum.Gender, aux.slice());
+		this.optionServ.SetOption(OptionGroupsEnum.Gender, optionAux.slice());
+
+		groupAux = new GeneralOptionGroupModel("Gender", "group-1", optionAux);
+
+		this.optionGroup.push(groupAux);
 
 		// HairColor Data
-		aux = [];
+		groupAux = null;
+		optionAux = [];
 
 		let defaultHairMeasure: number = 300;
 
-		aux.push(new GeneralOptionModel(1, "Blond", this.BlondHair, null, defaultHairMeasure, defaultHairMeasure));
-		aux.push(new GeneralOptionModel(1, "Brunette", this.BrunetteHair, null, defaultHairMeasure, defaultHairMeasure));
-		aux.push(new GeneralOptionModel(1, "Ravenette", this.RavenetteHair, null, defaultHairMeasure, defaultHairMeasure));
-		aux.push(new GeneralOptionModel(1, "Redhead", this.RedheadHair, null, defaultHairMeasure, defaultHairMeasure));
-		aux.push(new GeneralOptionModel(1, "Pinkette", this.PinketteHair, null, defaultHairMeasure, defaultHairMeasure));
-		aux.push(new GeneralOptionModel(1, "Bluenette", this.BluenetteHair, null, defaultHairMeasure, defaultHairMeasure));
-		aux.push(new GeneralOptionModel(1, "Rainbow", this.RainbowHair, null, defaultHairMeasure, defaultHairMeasure));
+		optionAux.push(new GeneralOptionItemModel(1, "Blond", null, true, this.BlondHair, null, defaultHairMeasure, defaultHairMeasure));
+		optionAux.push(new GeneralOptionItemModel(1, "Brunette", null, true, this.BrunetteHair, null, defaultHairMeasure, defaultHairMeasure));
+		optionAux.push(new GeneralOptionItemModel(1, "Ravenette", null, true, this.RavenetteHair, null, defaultHairMeasure, defaultHairMeasure));
+		optionAux.push(new GeneralOptionItemModel(1, "Redhead", null, true, this.RedheadHair, null, defaultHairMeasure, defaultHairMeasure));
+		optionAux.push(new GeneralOptionItemModel(1, "Pinkette", null, true, this.PinketteHair, null, defaultHairMeasure, defaultHairMeasure));
+		optionAux.push(new GeneralOptionItemModel(1, "Bluenette", null, true, this.BluenetteHair, null, defaultHairMeasure, defaultHairMeasure));
+		optionAux.push(new GeneralOptionItemModel(1, "Rainbow", null, true, this.RainbowHair, null, defaultHairMeasure, defaultHairMeasure));
 
-		this.optionServ.SetOption(OptionGroupsEnum.HairColor, aux.slice());
+		this.optionServ.SetOption(OptionGroupsEnum.HairColor, optionAux.slice());
 
+		groupAux = new GeneralOptionGroupModel("Hair Color", "group-1", optionAux);
+
+		this.optionGroup.push(groupAux);
+		
 		// EyeColor Data
-		aux = [];
+		groupAux = null;
+		optionAux = [];
 
 		let defaultEyeMeasure: number = 250;
 
-		aux.push(new GeneralOptionModel(1, "Red", this.RedEyeColor, null, defaultEyeMeasure, defaultEyeMeasure));
-		aux.push(new GeneralOptionModel(1, "Blue", this.BlueEyeColor, null, defaultEyeMeasure, defaultEyeMeasure));
-		aux.push(new GeneralOptionModel(1, "Green", this.GreenEyeColor, null, defaultEyeMeasure, defaultEyeMeasure));
-		aux.push(new GeneralOptionModel(1, "Yellow", this.YellowEyeColor, null, defaultEyeMeasure, defaultEyeMeasure));
-		aux.push(new GeneralOptionModel(1, "Pink", this.PinkEyeColor, null, defaultEyeMeasure, defaultEyeMeasure));
-		aux.push(new GeneralOptionModel(1, "Purple", this.PurpleEyeColor, null, defaultEyeMeasure, defaultEyeMeasure));
-		aux.push(new GeneralOptionModel(1, "Brown", this.BrownEyeColor, null, defaultEyeMeasure, defaultEyeMeasure));
-		aux.push(new GeneralOptionModel(1, "Black", this.BlackEyeColor, null, defaultEyeMeasure, defaultEyeMeasure));
-		aux.push(new GeneralOptionModel(1, "White", this.WhiteEyeColor, null, defaultEyeMeasure, defaultEyeMeasure));
-		aux.push(new GeneralOptionModel(1, "Rainbow", this.RainbowEyeColor, null, defaultEyeMeasure, defaultEyeMeasure));
+		optionAux.push(new GeneralOptionItemModel(1, "Red", null, true, this.RedEyeColor, null, defaultEyeMeasure, defaultEyeMeasure));
+		optionAux.push(new GeneralOptionItemModel(1, "Blue", null, true, this.BlueEyeColor, null, defaultEyeMeasure, defaultEyeMeasure));
+		optionAux.push(new GeneralOptionItemModel(1, "Green", null, true, this.GreenEyeColor, null, defaultEyeMeasure, defaultEyeMeasure));
+		optionAux.push(new GeneralOptionItemModel(1, "Yellow", null, true, this.YellowEyeColor, null, defaultEyeMeasure, defaultEyeMeasure));
+		optionAux.push(new GeneralOptionItemModel(1, "Pink", null, true, this.PinkEyeColor, null, defaultEyeMeasure, defaultEyeMeasure));
+		optionAux.push(new GeneralOptionItemModel(1, "Purple", null, true, this.PurpleEyeColor, null, defaultEyeMeasure, defaultEyeMeasure));
+		optionAux.push(new GeneralOptionItemModel(1, "Brown", null, true, this.BrownEyeColor, null, defaultEyeMeasure, defaultEyeMeasure));
+		optionAux.push(new GeneralOptionItemModel(1, "Black", null, true, this.BlackEyeColor, null, defaultEyeMeasure, defaultEyeMeasure));
+		optionAux.push(new GeneralOptionItemModel(1, "White", null, true, this.WhiteEyeColor, null, defaultEyeMeasure, defaultEyeMeasure));
+		optionAux.push(new GeneralOptionItemModel(1, "Rainbow", null, true, this.RainbowEyeColor, null, defaultEyeMeasure, defaultEyeMeasure));
 
-		this.optionServ.SetOption(OptionGroupsEnum.EyeColor, aux.slice());
+		this.optionServ.SetOption(OptionGroupsEnum.EyeColor, optionAux.slice());
+
+		groupAux = new GeneralOptionGroupModel("Eye Color", "group-1", optionAux);
+
+		this.optionGroup.push(groupAux);
 	}
 
 	// URLs

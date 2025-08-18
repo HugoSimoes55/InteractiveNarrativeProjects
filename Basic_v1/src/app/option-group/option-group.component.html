@@ -1,0 +1,6 @@
+<div class="title">
+	<h2>{{ groupTitle }}</h2>
+</div>
+<app-option-item *ngFor="let optionItem of this.GroupItems"
+				 [Option]="optionItem"
+				 class="option center"></app-option-item>

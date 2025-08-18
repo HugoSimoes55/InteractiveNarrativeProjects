@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { GeneralOptionModel } from '../models/general-option.model';
+import { GeneralOptionItemModel } from '../models/general-option.model';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,8 +10,8 @@ import { CommonModule } from '@angular/common';
 	styleUrl: './option-item.component.css'
 })
 export class OptionItemComponent implements OnInit {
-	@ViewChild("optionRoot") root: ElementRef;
-	@Input("Option") option: GeneralOptionModel;
+	//@ViewChild("optionRoot") root: ElementRef;
+	@Input("Option") option: GeneralOptionItemModel;
 
 	OptionSelected: boolean = false;
 

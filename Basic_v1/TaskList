@@ -1,14 +1,18 @@
 DONE - Prevent vertical flex box stretching on parallel groups
 
-Add multiple option display types
+DONE - Create group component
+
+Add optional group header text
 Add options with narrative texts
+Add option prerequisites
+Use prerequisites for male and female images
+Add multiple option display types
+Add single group select
+
+DONE - Add default "No Image" image
 
 Add colors to background, Groups and Options
 DONE - Add colors for selected and not selected Options
-
-Add single group selected
-
-Add default "No Image" image
 
 Create json file to hold data
 Move data from APP Component to Json file

@@ -3,36 +3,28 @@
 		<h1>Character Creator Test</h1>
 	</div>
 	<br>
-	<div class="group-1">
-		<div class="title">
-			<h2>Gender</h2>
-		</div>
-		<app-option-item *ngFor="let gender of this.genders"
-						 [Option]="gender"
-						 class="option center"></app-option-item>
-	</div>
-	<div class="group-1">
-		<div class="title">
-			<h2>Hair Color</h2>
-		</div>
-		<app-option-item *ngFor="let hair of this.hairColors"
-						 [Option]="hair"
-						 class="option center"></app-option-item>
-	</div>
-	<div class="group-1">
-		<div class="title">
-			<h2>Eye Color</h2>
-		</div>
-		<app-option-item *ngFor="let eye of this.eyeColors"
-						 [Option]="eye"
-						 class="option center"></app-option-item>
-	</div>
+
+	<app-option-group *ngFor="let groupItem of this.optionGroup"
+					  class="group-1"
+					  [GroupItems]="groupItem.OptionItems">
+	</app-option-group>
+
 	<div class="group-1">
 		<div class="title">
 			<h2>Body Type</h2>
 		</div>
-
-		
+		Athletic: A strong, muscular build often associated with fitness and physical activity.
+		Petite: A smaller, shorter body type, often with a delicate frame.
+		Curvy: A figure with pronounced curves, often referring to a fuller bust and hips.
+		Slim: A lean body type that suggests a slender appearance without being overly thin.
+		Stocky: A solid, sturdy build, often with a broad frame and muscularity.
+		Average: A body type that represents a typical or medium build, neither lean nor heavy.
+		Voluptuous: A fuller figure with an emphasis on curves, often used for characters with a more pronounced
+		hourglass shape.
+		Lanky: A tall and thin body type, often with long limbs.
+		Round: A softer, fuller body type that is not necessarily tied to weight but suggests a gentle, rounded
+		appearance.
+		Brawny: A strong, muscular body type, often associated with physical strength.
 	</div>
 	<div class="group-1">
 		<div class="title">
@@ -49,6 +41,5 @@
 			<h2>Skills</h2>
 		</div>
 
-		
 	</div>
 </div>

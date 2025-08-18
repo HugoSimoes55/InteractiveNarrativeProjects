@@ -1,5 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
-import { GeneralOptionModel } from '../models/general-option.model';
+import { GeneralOptionItemModel } from '../models/general-option.model';
 import { OptionGroupsEnum } from '../models/option-groups.enum';
 
 @Injectable({
@@ -7,7 +7,7 @@ import { OptionGroupsEnum } from '../models/option-groups.enum';
 })
 export class OptionsService {
 
-	private allOptions: Map<string, GeneralOptionModel[]> = new Map<string, GeneralOptionModel[]>();;
+	private allOptions: Map<string, GeneralOptionItemModel[]> = new Map<string, GeneralOptionItemModel[]>();;
 
 	constructor() {
 
@@ -18,7 +18,7 @@ export class OptionsService {
 		return this.allOptions.get(optionGroup);
 	}
 
-	SetOption(optionGroup: OptionGroupsEnum, options: GeneralOptionModel[]) {
+	SetOption(optionGroup: OptionGroupsEnum, options: GeneralOptionItemModel[]) {
 		this.allOptions.set(optionGroup, options);
 	}
 }
