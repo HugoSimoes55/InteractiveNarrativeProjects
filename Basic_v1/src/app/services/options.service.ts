@@ -1,6 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { GeneralOptionItemModel } from '../models/general-option.model';
-import { OptionGroupsEnum } from '../models/option-groups.enum';
+import jsonData from './../../data/options.json';
+import { GeneralOptionGroupModel } from '../models/general-option-group.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -13,12 +14,12 @@ export class OptionsService {
 
 	}
 
-	GetOptions(optionGroup: OptionGroupsEnum) {
+	LoadData() {
 
-		return this.allOptions.get(optionGroup);
-	}
+		let data = Object.assign(new Array<GeneralOptionGroupModel>, jsonData);
 
-	SetOption(optionGroup: OptionGroupsEnum, options: GeneralOptionItemModel[]) {
-		this.allOptions.set(optionGroup, options);
+		console.log(data);
+
+		return data;
 	}
 }

@@ -10,7 +10,6 @@ import { CommonModule } from '@angular/common';
 	styleUrl: './option-item.component.css'
 })
 export class OptionItemComponent implements OnInit {
-	//@ViewChild("optionRoot") root: ElementRef;
 	@Input("Option") option: GeneralOptionItemModel;
 
 	OptionSelected: boolean = false;

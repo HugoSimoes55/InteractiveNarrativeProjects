@@ -1,6 +1,11 @@
-<div class="title">
-	<h2>{{ groupTitle }}</h2>
+<div class="title"
+	 *ngIf="this.optionGroup.GroupTitle">
+	<h2>{{ this.optionGroup.GroupTitle }}</h2>
 </div>
-<app-option-item *ngFor="let optionItem of this.GroupItems"
+<div class="title"
+	 *ngIf="this.optionGroup.GroupHeaderText">
+	<h3>{{ this.optionGroup.GroupHeaderText }}</h3>
+</div>
+<app-option-item *ngFor="let optionItem of this.optionItems"
 				 [Option]="optionItem"
 				 class="option center"></app-option-item>

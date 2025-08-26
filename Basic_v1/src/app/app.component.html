@@ -1,12 +1,13 @@
 <div class="main group">
 	<div class="title">
-		<h1>Character Creator Test</h1>
+		<h1>Character Creator - Basic</h1>
 	</div>
 	<br>
 
-	<app-option-group *ngFor="let groupItem of this.optionGroup"
+	<app-option-group *ngFor="let group of this.optionGroups"
 					  class="group-1"
-					  [GroupItems]="groupItem.OptionItems">
+					  [OptionGroup]="group"
+					  [OptionItems]="group.OptionItems">
 	</app-option-group>
 
 	<div class="group-1">
@@ -14,16 +15,25 @@
 			<h2>Body Type</h2>
 		</div>
 		Athletic: A strong, muscular build often associated with fitness and physical activity.
+		<br>
 		Petite: A smaller, shorter body type, often with a delicate frame.
+		<br>
 		Curvy: A figure with pronounced curves, often referring to a fuller bust and hips.
+		<br>
 		Slim: A lean body type that suggests a slender appearance without being overly thin.
+		<br>
 		Stocky: A solid, sturdy build, often with a broad frame and muscularity.
+		<br>
 		Average: A body type that represents a typical or medium build, neither lean nor heavy.
-		Voluptuous: A fuller figure with an emphasis on curves, often used for characters with a more pronounced
-		hourglass shape.
+		<br>
+		Voluptuous: A fuller figure with an emphasis on curves, often used for characters with a more
+		pronouncedhourglass shape.
+		<br>
 		Lanky: A tall and thin body type, often with long limbs.
-		Round: A softer, fuller body type that is not necessarily tied to weight but suggests a gentle, rounded
-		appearance.
+		<br>
+		Round: A softer, fuller body type that is not necessarily tied to weight but suggests a gentle,
+		roundedappearance.
+		<br>
 		Brawny: A strong, muscular body type, often associated with physical strength.
 	</div>
 	<div class="group-1">
@@ -32,9 +42,16 @@
 		</div>
 
 		Countryside
+		<br>
+		Private Island
+		<br>
 		Big City
+		<br>
+		Suburbs
+		<br>
 		Slums
-		Hermit
+		<br>
+		Off-Grid
 	</div>
 	<div class="group-1">
 		<div class="title">
@@ -42,4 +59,9 @@
 		</div>
 
 	</div>
+
+	Personality
+
+	<br>
+	Hobbies
 </div>

@@ -7,9 +7,11 @@
 		 class="clearBorder center image-control"
 		 [style.height]="option.MaxHeight + 'px'"
 		 [style.width]="option.MaxHeight + 'px'">
-		<img src="{{ option.ImageToShow }}"
-			 alt="{{ option.DisplayText }}">
+		<img src="{{ option.ImageURL }}"
+			 alt="">
 	</div>
 	<br>
 	<span *ngIf="option.FlavourText">{{ option.FlavourText }}</span>
+	<br>
+	<br>
 </div>
