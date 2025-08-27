@@ -1,16 +1,20 @@
 [
 	{
-		"GroupTitle": "",
-		"GroupHeaderText": "Welcome to Character Creator - Basic. The first creation of LazyBear. <br>If you don't know how Character Creators work, then how the hell did you find this?",
+		"ID": "0",
+		"Title": "",
+		"HeaderText": "Welcome to Character Creator - Basic. The first creation of LazyBear. <br>If you don't know how Character Creators work, then how the hell did you find this?",
+		"SelectionLimit": 0,
 		"DisplayClass": "group-1"
 	},
 	{
-		"GroupTitle": "Gender",
-		"GroupHeaderText": "Choose a gender. If your gender isn't shown here, ",
+		"ID": "1",
+		"Title": "Gender",
+		"HeaderText": "Choose a gender. If your gender isn't shown here, ",
 		"DisplayClass": "group-1",
+		"SelectionLimit": 1,
 		"OptionItems": [
 			{
-				"ID": "1",
+				"ID": "1-1",
 				"Title": "Male",
 				"FlavourText": "Short or tall, fat or fit, pick this.",
 				"hasImage": true,
@@ -19,7 +23,7 @@
 				"MaxWidth": 500
 			},
 			{
-				"ID": "2",
+				"ID": "1-2",
 				"Title": "Female",
 				"FlavourText": "From girls next door to bitches with a bad atitude, this is your option.",
 				"hasImage": true,
@@ -30,167 +34,190 @@
 		]
 	},
 	{
-		"GroupTitle": "Hair Color",
+		"ID": "2",
+		"Requirement": [],
+		"Title": "Hair Color",
 		"DisplayClass": "group-1",
+		"Comment": "Female Hair",
+		"SelectionLimit": 2,
 		"OptionItems": [
 			{
-				"ID": 1,
+				"ID": "2-1",
 				"Title": "Blond",
 				"FlavourText": null,
 				"hasImage": true,
 				"ImageURL": "https://cdnb.artstation.com/p/assets/images/images/002/938/369/large/svetlana-tigai-blonde-hair-1000px-72-dpi.jpg?1467532459",
+				"ImageText": "Female Blond Hair",
 				"MaxHeight": 300,
 				"MaxWidth": 300
 			},
 			{
-				"ID": 2,
+				"ID": "2-2",
 				"Title": "Brunette",
 				"FlavourText": null,
 				"hasImage": true,
 				"ImageURL": "https://i.pinimg.com/originals/82/81/06/8281064008dea39393e32760bee38baf.jpg",
+				"ImageText": "Female Brunette Hair",
 				"MaxHeight": 300,
 				"MaxWidth": 300
 			},
 			{
-				"ID": 3,
+				"ID": "2-3",
 				"Title": "Ravenette",
 				"FlavourText": null,
 				"hasImage": true,
 				"ImageURL": "https://media.craiyon.com/2025-04-27/FSrWPKdUQgS6pP2rfSvjnw.webp",
+				"ImageText": "Female Ravenette Hair",
 				"MaxHeight": 300,
 				"MaxWidth": 300
 			},
 			{
-				"ID": 4,
+				"ID": "2-4",
 				"Title": "Redhead",
 				"FlavourText": null,
 				"hasImage": true,
 				"ImageURL": "https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://media.easy-peasy.ai/11beb7b7-c42b-40f8-aa56-ef8cb56043cb/532090d7-15fa-4ae7-a46a-1f1f358f9a2b.png",
+				"ImageText": "Female Redhead Hair",
 				"MaxHeight": 300,
 				"MaxWidth": 300
 			},
 			{
-				"ID": 5,
+				"ID": "2-5",
 				"Title": "Pinkette",
 				"FlavourText": null,
 				"hasImage": true,
 				"ImageURL": "https://img.freepik.com/premium-vector/drawing-girl-with-pink-hair-pink-hair_1023984-24131.jpg",
+				"ImageText": "Female Pinkette Hair",
 				"MaxHeight": 300,
 				"MaxWidth": 300
 			},
 			{
-				"ID": 6,
+				"ID": "2-6",
 				"Title": "Bluenette",
 				"FlavourText": null,
 				"hasImage": true,
-				"ImageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVw8TWqcR5yB6vHG5pbmKgpmLNAUQJm2Ix6w&s",
+				"ImageURL": "https://cdna.artstation.com/p/assets/images/images/040/911/112/large/alinson_art-221.jpg?1630240655",
+				"ImageText": "Female Bluenette Hair",
 				"MaxHeight": 300,
 				"MaxWidth": 300
 			},
 			{
-				"ID": 7,
+				"ID": "2-7",
 				"Title": "Rainbow",
 				"FlavourText": null,
 				"hasImage": true,
-				"ImageURL": "https://r2.starryai.com/results/1027414879/d6812944-43d9-40b8-9ece-c5527d23ebf9.webp",
+				"ImageURL": "https://cdnb.artstation.com/p/assets/images/images/012/414/879/large/anita-pradkhan-gurl.jpg?1534694012",
+				"ImageText": "Female Rainbow Hair",
 				"MaxHeight": 300,
 				"MaxWidth": 300
 			}
 		]
 	},
 	{
-		"GroupTitle": "Eye Color",
+		"ID": "3",
+		"Title": "Eye Color",
 		"DisplayClass": "group-1",
+		"SelectionLimit": 1,
 		"OptionItems": [
 			{
-				"ID": 1,
+				"ID": "3-1",
 				"Title": "Red",
 				"FlavourText": null,
 				"hasImage": true,
 				"ImageURL": "https://i.pinimg.com/736x/ba/6c/c6/ba6cc622fcc03bce95a114cd5459bda4.jpg",
-				"MaxHeight": 250,
-				"MaxWidth": 250
+				"ImageText": "Eye Color - Red",
+				"MaxHeight": 200,
+				"MaxWidth": 200
 			},
 			{
-				"ID": 2,
+				"ID": "3-2",
 				"Title": "Blue",
 				"FlavourText": null,
 				"hasImage": true,
-				"ImageURL": "https://a0.anyrgb.com/pngimg/608/1760/corneal-endothelium-dry-eye-cornea-eye-examination-eye-color-human-eye-ophthalmology-tears-eyelash-extensions-iris.png",
-				"MaxHeight": 250,
-				"MaxWidth": 250
+				"ImageURL": "https://t3.ftcdn.net/jpg/05/53/32/74/360_F_553327449_dYK1ffcJgzodNuhByp87kS9Z5aLvxntV.jpg",
+				"ImageText": "Eye Color - Blue",
+				"MaxHeight": 200,
+				"MaxWidth": 200
 			},
 			{
-				"ID": 3,
+				"ID": "3-3",
 				"Title": "Green",
 				"FlavourText": null,
 				"hasImage": true,
 				"ImageURL": "https://i.pinimg.com/736x/96/c7/45/96c745bba9d6cf7aaa163d9089f77e4f.jpg",
-				"MaxHeight": 250,
-				"MaxWidth": 250
+				"ImageText": "Eye Color - Green",
+				"MaxHeight": 200,
+				"MaxWidth": 200
 			},
 			{
-				"ID": 4,
+				"ID": "3-4",
 				"Title": "Yellow",
 				"FlavourText": null,
 				"hasImage": true,
 				"ImageURL": "https://thumbs.dreamstime.com/b/detailed-sketch-yellow-eye-highlighting-intricate-textures-colors-captivating-showcases-striking-emphasizing-its-vibrant-340878890.jpg",
-				"MaxHeight": 250,
-				"MaxWidth": 250
+				"ImageText": "Eye Color - Yellow",
+				"MaxHeight": 200,
+				"MaxWidth": 200
 			},
 			{
-				"ID": 5,
+				"ID": "3-5",
 				"Title": "Pink",
 				"FlavourText": null,
 				"hasImage": true,
 				"ImageURL": "https://i.pinimg.com/736x/2c/f8/62/2cf86283cf5cc356cf4bc2058d5f4f32.jpg",
-				"MaxHeight": 250,
-				"MaxWidth": 250
+				"ImageText": "Eye Color - Pink",
+				"MaxHeight": 200,
+				"MaxWidth": 200
 			},
 			{
-				"ID": 6,
+				"ID": "3-6",
 				"Title": "Purple",
 				"FlavourText": null,
 				"hasImage": true,
 				"ImageURL": "https://i.pinimg.com/564x/f9/d9/ca/f9d9ca123edd5e401d530edfbf92cf86.jpg",
-				"MaxHeight": 250,
-				"MaxWidth": 250
+				"ImageText": "Eye Color - Purple",
+				"MaxHeight": 200,
+				"MaxWidth": 200
 			},
 			{
-				"ID": 7,
+				"ID": "3-7",
 				"Title": "Brown",
 				"FlavourText": null,
 				"hasImage": true,
 				"ImageURL": "https://cdna.artstation.com/p/assets/images/images/007/092/608/large/christina-kornilova-brown-eye-by-blackrysh.jpg?1503612957",
-				"MaxHeight": 250,
-				"MaxWidth": 250
+				"ImageText": "Eye Color - Brown",
+				"MaxHeight": 200,
+				"MaxWidth": 200
 			},
 			{
-				"ID": 8,
+				"ID": "3-8",
 				"Title": "Black",
 				"FlavourText": null,
 				"hasImage": true,
 				"ImageURL": "https://i.pinimg.com/474x/23/90/7f/23907fe5a65e6ae4decbad50a6df3260.jpg",
-				"MaxHeight": 250,
-				"MaxWidth": 250
+				"ImageText": "Eye Color - Black",
+				"MaxHeight": 200,
+				"MaxWidth": 200
 			},
 			{
-				"ID": 9,
+				"ID": "3-9",
 				"Title": "White",
 				"FlavourText": null,
 				"hasImage": true,
 				"ImageURL": "https://i.pinimg.com/736x/5a/cf/f0/5acff0105eaab461e80c349f84f5c340.jpg",
-				"MaxHeight": 250,
-				"MaxWidth": 250
+				"ImageText": "Eye Color - White",
+				"MaxHeight": 200,
+				"MaxWidth": 200
 			},
 			{
-				"ID": 10,
+				"ID": "3-10",
 				"Title": "Rainbow",
 				"FlavourText": null,
 				"hasImage": true,
 				"ImageURL": "https://w0.peakpx.com/wallpaper/767/941/HD-wallpaper-rainbow-eye-rainbow-eyes-rainbow-homosexual-eye-thumbnail.jpg",
-				"MaxHeight": 250,
-				"MaxWidth": 250
+				"ImageText": "Eye Color - Rainbow",
+				"MaxHeight": 200,
+				"MaxWidth": 200
 			}
 		]
 	}

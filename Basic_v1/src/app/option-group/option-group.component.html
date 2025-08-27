@@ -1,10 +1,10 @@
 <div class="title"
-	 *ngIf="this.optionGroup.GroupTitle">
-	<h2>{{ this.optionGroup.GroupTitle }}</h2>
+	 *ngIf="this.optionGroup.Title">
+	<h2>{{ this.optionGroup.Title }}</h2>
 </div>
 <div class="title"
-	 *ngIf="this.optionGroup.GroupHeaderText">
-	<h3>{{ this.optionGroup.GroupHeaderText }}</h3>
+	 *ngIf="this.optionGroup.HeaderText">
+	<h3>{{ this.optionGroup.HeaderText }}</h3>
 </div>
 <app-option-item *ngFor="let optionItem of this.optionItems"
 				 [Option]="optionItem"

@@ -4,17 +4,17 @@ DONE -  Create group component
 
 DONE - Add optional group header text
 DONE - Add options with narrative texts
-Add option prerequisites
-Use prerequisites for male and female images
-Add multiple option display types
-Add single group select
+Add option requirements
+Use requirements for male and female images
+DONE - Add group select limits
+
+Procedurally generate IDs?
 
 DONE - Add default "No Image" image
 
 Add colors to background, Groups and Options
 DONE - Add colors for selected and not selected Options
 
-Create json file to hold data
-Move data from APP Component to Json file
+DONE - Create json file to hold data
 
 Add Save and Load for Options.

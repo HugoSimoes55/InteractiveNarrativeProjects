@@ -1,25 +1,40 @@
-import { Injectable, OnInit } from '@angular/core';
-import { GeneralOptionItemModel } from '../models/general-option.model';
+import { Injectable } from '@angular/core';
 import jsonData from './../../data/options.json';
 import { GeneralOptionGroupModel } from '../models/general-option-group.model';
+import { BehaviorSubject } from 'rxjs';
+import { GeneralOptionItemModel } from '../models/general-option.model';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class OptionsService {
 
-	private allOptions: Map<string, GeneralOptionItemModel[]> = new Map<string, GeneralOptionItemModel[]>();;
+	private AllOptions: GeneralOptionGroupModel[] = [];
+
+	public Options: BehaviorSubject<GeneralOptionGroupModel[]> = null;
 
 	constructor() {
+		this.AllOptions = Object.assign(new Array<GeneralOptionGroupModel>, jsonData);
 
+		this.Options = new BehaviorSubject<GeneralOptionGroupModel[]>(this.AllOptions);
 	}
 
-	LoadData() {
+	SelectOption(optionSelect: GeneralOptionItemModel) {
+		let groupSelect = this.FindGroupByOptionId(optionSelect.ID);
 
-		let data = Object.assign(new Array<GeneralOptionGroupModel>, jsonData);
+		if (groupSelect.OptionItems.filter((option) => option.Selected).length < groupSelect.SelectionLimit
+			|| groupSelect.OptionItems.filter((option) => option.Selected && option.ID == optionSelect.ID).length == 1) {
+			groupSelect.OptionItems.find((option) => option.ID == optionSelect.ID).Selected = !optionSelect.Selected;
 
-		console.log(data);
+			this.AllOptions.find((group) => group.ID == groupSelect.ID)[0] = groupSelect;
+		}
 
-		return data;
+		this.Options.next(this.AllOptions);
+	}
+
+	FindGroupByOptionId(optionId: string): GeneralOptionGroupModel {
+		let groupId = optionId.substring(0, optionId.lastIndexOf("-"));
+
+		return this.AllOptions.find((group) => group.ID == groupId);
 	}
 }

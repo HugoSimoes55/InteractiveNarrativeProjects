@@ -30,6 +30,8 @@ export class AppComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.optionGroups = this.optionServ.LoadData();
+		this.optionServ.Options.subscribe((data) => {
+			this.optionGroups = data;
+		});
 	}
 }

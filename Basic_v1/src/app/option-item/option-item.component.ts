@@ -1,6 +1,7 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { GeneralOptionItemModel } from '../models/general-option.model';
 import { CommonModule } from '@angular/common';
+import { OptionsService } from '../services/options.service';
 
 @Component({
 	selector: 'app-option-item',
@@ -12,9 +13,9 @@ import { CommonModule } from '@angular/common';
 export class OptionItemComponent implements OnInit {
 	@Input("Option") option: GeneralOptionItemModel;
 
-	OptionSelected: boolean = false;
+	//OptionSelected: boolean = false;
 
-	constructor() {
+	constructor(private optionsServ: OptionsService) {
 
 	}
 
@@ -23,6 +24,8 @@ export class OptionItemComponent implements OnInit {
 	}
 
 	onSelectOption() {
-		this.OptionSelected = !this.OptionSelected;
+		//this.OptionSelected = !this.OptionSelected;
+
+		this.optionsServ.SelectOption(this.option);
 	}
 }
