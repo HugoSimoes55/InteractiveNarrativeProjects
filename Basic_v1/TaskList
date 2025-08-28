@@ -4,17 +4,19 @@ DONE -  Create group component
 
 DONE - Add optional group header text
 DONE - Add options with narrative texts
-Add option requirements
-Use requirements for male and female images
 DONE - Add group select limits
 
+DONE - Add option requirements
+DONE - Use requirements for male and female images 
+
 Procedurally generate IDs?
+Make generic find algorithm for option items?
 
 DONE - Add default "No Image" image
 
-Add colors to background, Groups and Options
 DONE - Add colors for selected and not selected Options
 
 DONE - Create json file to hold data
 
 Add Save and Load for Options.
+Save only selected options that meet requirements.

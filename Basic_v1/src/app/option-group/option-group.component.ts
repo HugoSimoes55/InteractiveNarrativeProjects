@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { GeneralOptionItemModel } from '../models/general-option.model';
+import { OptionItemModel } from '../models/option-item.model';
 import { OptionItemComponent } from '../option-item/option-item.component';
 import { CommonModule } from '@angular/common';
-import { GeneralOptionGroupModel } from '../models/general-option-group.model';
+import { OptionGroupModel } from '../models/option-group.model';
 
 @Component({
 	selector: 'app-option-group',
@@ -15,8 +15,8 @@ import { GeneralOptionGroupModel } from '../models/general-option-group.model';
 })
 export class OptionGroupComponent {
 
-	@Input("OptionGroup") optionGroup: GeneralOptionGroupModel;
-	@Input("OptionItems") optionItems: GeneralOptionItemModel[] = [];
+	@Input("OptionGroup") optionGroup: OptionGroupModel;
+	@Input("OptionItems") optionItems: OptionItemModel[] = [];
 
 	constructor() {
 

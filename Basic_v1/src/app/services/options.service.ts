@@ -1,25 +1,27 @@
 import { Injectable } from '@angular/core';
 import jsonData from './../../data/options.json';
-import { GeneralOptionGroupModel } from '../models/general-option-group.model';
+import { OptionGroupModel } from '../models/option-group.model';
 import { BehaviorSubject } from 'rxjs';
-import { GeneralOptionItemModel } from '../models/general-option.model';
+import { OptionItemModel } from '../models/option-item.model';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class OptionsService {
 
-	private AllOptions: GeneralOptionGroupModel[] = [];
+	private AllOptions: OptionGroupModel[] = [];
 
-	public Options: BehaviorSubject<GeneralOptionGroupModel[]> = null;
+	public OptionsEvent: BehaviorSubject<OptionGroupModel[]> = null;
 
 	constructor() {
-		this.AllOptions = Object.assign(new Array<GeneralOptionGroupModel>, jsonData);
+		this.AllOptions = Object.assign(new Array<OptionGroupModel>, jsonData);
 
-		this.Options = new BehaviorSubject<GeneralOptionGroupModel[]>(this.AllOptions);
+		this.OptionsEvent = new BehaviorSubject<OptionGroupModel[]>(this.AllOptions);
+
+		this.ValidateRequirements();
 	}
 
-	SelectOption(optionSelect: GeneralOptionItemModel) {
+	SelectOption(optionSelect: OptionItemModel) {
 		let groupSelect = this.FindGroupByOptionId(optionSelect.ID);
 
 		if (groupSelect.OptionItems.filter((option) => option.Selected).length < groupSelect.SelectionLimit
@@ -27,14 +29,54 @@ export class OptionsService {
 			groupSelect.OptionItems.find((option) => option.ID == optionSelect.ID).Selected = !optionSelect.Selected;
 
 			this.AllOptions.find((group) => group.ID == groupSelect.ID)[0] = groupSelect;
-		}
 
-		this.Options.next(this.AllOptions);
+			this.ValidateRequirements();
+		}
 	}
 
-	FindGroupByOptionId(optionId: string): GeneralOptionGroupModel {
+	FindOptionById(optionId: string): OptionItemModel {
+		let groupId = optionId.substring(0, optionId.lastIndexOf("-"));
+
+		return this.AllOptions.find((group) => group.ID == groupId)?.OptionItems.find((option) => option.ID == optionId);
+	}
+
+	FindGroupById(groupId: string): OptionGroupModel {
+		return this.AllOptions.find((group) => group.ID == groupId);
+	}
+
+	FindGroupByOptionId(optionId: string): OptionGroupModel {
 		let groupId = optionId.substring(0, optionId.lastIndexOf("-"));
 
 		return this.AllOptions.find((group) => group.ID == groupId);
+	}
+
+
+	/////////////////////////
+	///// Requirements
+	/////////////////////////
+
+
+	ValidateRequirements() {
+		this.AllOptions.forEach((group) => {
+			group = this.ValidateGroup(group);
+		});
+
+		this.OptionsEvent.next(this.AllOptions);
+	}
+
+	ValidateGroup(group: OptionGroupModel) {
+		let ret: boolean = true;
+
+		group.Requirements?.forEach((req) => {
+			let option = this.FindOptionById(req.OptionID);
+
+			if (option.Selected != req.SelectionState) {
+				ret = false;
+			}
+		});
+
+		group.RequirementVisibility = ret;
+
+		return group;
 	}
 }

@@ -1,6 +1,6 @@
-import { computed } from "@angular/core";
+import { OptionRequirementModel } from "./option-requirement.model";
 
-export class GeneralOptionItemModel {
+export class OptionItemModel {
 
 	public ID: string;
 	public Title: string;
@@ -11,11 +11,8 @@ export class GeneralOptionItemModel {
 	public MaxHeight: number = 400;
 	public MaxWidth: number = 400;
 	public Selected: boolean = false;
+	public Requirements: OptionRequirementModel[];
+	public RequirementVisibility: boolean;
 
 	private EmptyImage: string = "assets/images/NoImageAvailable.png";
-
-	constructor() {
-
-
-	}
 }

@@ -5,7 +5,7 @@ import { Title } from '@angular/platform-browser';
 import { OptionsService } from './services/options.service';
 import { CommonModule } from '@angular/common';
 import { OptionGroupComponent } from './option-group/option-group.component';
-import { GeneralOptionGroupModel } from './models/general-option-group.model';
+import { OptionGroupModel } from './models/option-group.model';
 
 @Component({
 	selector: 'app-root',
@@ -22,7 +22,13 @@ import { GeneralOptionGroupModel } from './models/general-option-group.model';
 })
 export class AppComponent implements OnInit {
 	title = 'CYOA Basic v1';
-	optionGroups: GeneralOptionGroupModel[] = [];
+	optionGroups: OptionGroupModel[] = [];
+
+	get activeGroups() {
+		console.log(this.optionGroups);
+
+		return this.optionGroups.filter((group) => group.RequirementVisibility);
+	}
 
 	constructor(private titleService: Title,
 		private optionServ: OptionsService) {
@@ -30,7 +36,7 @@ export class AppComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.optionServ.Options.subscribe((data) => {
+		this.optionServ.OptionsEvent.subscribe((data) => {
 			this.optionGroups = data;
 		});
 	}

@@ -4,8 +4,8 @@
 	</div>
 	<br>
 
-	<app-option-group *ngFor="let group of this.optionGroups"
-					  class="group-1"
+	<app-option-group *ngFor="let group of this.activeGroups"
+					  class="{{ group.DisplayClass ?? 'group-1' }}"
 					  [OptionGroup]="group"
 					  [OptionItems]="group.OptionItems">
 	</app-option-group>
