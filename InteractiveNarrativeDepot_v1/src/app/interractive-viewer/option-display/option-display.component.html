@@ -1,0 +1,46 @@
+<!------------------>
+<!-- Option Group -->
+<!------------------>
+@if ((optionGroup.Title || optionGroup.HeaderText)
+&& optionGroup.IsVisible) {
+<div class="group-1">
+	<div class="header-title"
+		 *ngIf="optionGroup.Title">
+		<h2>{{ optionGroup.Title }}</h2>
+	</div>
+	<div class="header-text"
+		 *ngIf="optionGroup.HeaderText">
+		<div>
+			<p>{{ optionGroup.HeaderText }}</p>
+		</div>
+	</div>
+</div>
+}
+<!------------------>
+<!-- Option Items -->
+<!------------------>
+@if ( optionGroup.IsVisible
+&& optionGroup.OptionItems.length > 0) {
+<div class="group-1">
+	<div *ngFor="let item of optionGroup.OptionItems"
+		 class="option center">
+		<div [ngClass]="{'selected': item.Selected}"
+			 (click)="OnSelectionClick(item)">
+			<span style="font-size: 24px;">{{ item.OptionText }}</span>
+			<br>
+			<div *ngIf="item.hasImage"
+				 class="clearBorder center image-control"
+				 [style.height]="item.MaxHeight + 'px'"
+				 [style.width]="item.MaxHeight + 'px'">
+				<img src="{{ item.ImageURL }}"
+					 alt="{{ item.ImageText }}">
+			</div>
+			<div *ngIf="item.FlavourText">
+				<br>
+				<span>{{ item.FlavourText }}</span>
+				<br>
+			</div>
+		</div>
+	</div>
+</div>
+}

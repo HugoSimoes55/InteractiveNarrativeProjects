@@ -9,8 +9,8 @@ DONE - Add group select limits
 DONE - Add option requirements
 DONE - Use requirements for male and female images 
 
-Procedurally generate IDs?
-Make generic find algorithm for option items?
+Procedurally generate IDs? - Will be added to later versions
+Make generic find algorithm for option items? - Will be added to later versions
 
 DONE - Add default "No Image" image
 
@@ -18,5 +18,5 @@ DONE - Add colors for selected and not selected Options
 
 DONE - Create json file to hold data
 
-Add Save and Load for Options.
-Save only selected options that meet requirements.
+Add Save and Load for Options - Will be added to later versions
+Save only selected options that meet requirements - Will be added to later versions

@@ -1,0 +1,39 @@
+CYOAs to replicate:
+	- Marvel Symbiote Version 3.0 - https://eldritcheater.neocities.org/Symbiote%20ICYOA/
+	- My Hero Academia CYOA - https://valmar.neocities.org/cyoas/mhacyoa/
+	- Make your own Avengers CYOA - https://particle9.github.io/cyoa/avenger_cyoa/
+	- Multiverse Explorer v5 - https://om1cr0n.neocities.org/multiverse_v5/
+	- Naruto CYOA - https://knotnotapplicable.neocities.org/naruto
+	- Godlings of Aliot
+	- Isekai Struggle Snuggle Monster - check drive
+
+
+DONE - Options Framework using inheritance/interface - Option-Base
+DONE - Construct Options by reading json files 
+
+
+DONE - Procedurally generate IDs
+DONE - Make generic find algorithm for option items
+
+
+Add Requirement Trait property and funcionality
+Add Collapse buttons
+Add Trait validation
+
+
+Freeze current group at the top of the page (similar to freezing panes on excel)
+Alternatively, have a menu on the side with bookmarks to all titled groups
+
+
+Add point manipulation 
+
+
+Static background image
+CSS in json
+
+
+Add Save and Load for Options
+Save only selected options that meet requirements
+
+
+Create CYOA Selector

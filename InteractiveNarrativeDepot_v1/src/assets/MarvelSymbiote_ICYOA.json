@@ -1,0 +1,426 @@
+[
+	{
+		"Title": "Marvel Symbiote ICYOA",
+		"HeaderText": "There are creatures out there; terrifying, MONSTROUS lifeforms that seem to defy every law of biology and several concrete laws of physics. Klyntar, that is what they call themselves, but the people of Earth know them by a different term. Symbiotes, alien creatures that bond with and empower their hosts with superhuman abilities, often warping their minds and turning them into murderous predators of their own kind.<br><br>Fortunately, those who have appeared on Earth have not ALL shared this trait of inducing such impulses. Unfortunately, they are dangerous nonetheless. And so, after years of hunting the creatures down, they are now contained by the S.C.F. Officially known as the Symbiote Containment Force, a United States Agency that operates under the radar to secure and contain these dangerous lifeforms.<br><br>Sadly, like in the case of MANY similar organizations, their security was found staggeringly lacking. The result? The cataclysmic escape of numerous Symbiotes that were previously in custody, with one in particular being largely responsible.<br><br>Then, by some twist of fate, it is discovered by you.",
+		"OptionType": "OptionGroup",
+		"OptionItems": [
+			{
+				"OptionText": "Potential",
+				"OptionType": "OptionItem",
+				"Traits": [
+					"Potential"
+				]
+			},
+			{
+				"OptionText": "Universe",
+				"OptionType": "OptionItem",
+				"Traits": [
+					"Universe"
+				]
+			},
+			{
+				"OptionText": "Character",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Symbiotes",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Abilities",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Items",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Companions",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Plot Lines",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Drawbacks",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Points",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Reward",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Information",
+				"OptionType": "OptionItem"
+			}
+		]
+	},
+	{
+		"Title": "Potential",
+		"OptionType": "OptionGroup",
+		"HeaderText": "Every <b>Host</b> has an innate potential that determines how powerful their <b>Klyntar</b> may start off or become. While this does not necessarily determine the Symbiotic <b>Compatibility</b> between them and their chosen Symbiote, it does grant them a higher chance to unlock dormant <b>Perks</b>, <b>Abilities</b>, and even <b>Gene Codex</b> entries.",
+		"SelectionLimit": "1",
+		"Validate_Visible": {
+			"ValidationType": "Enable",
+			"MatchType": "All",
+			"Traits": [
+				"Potential"
+			]
+		},
+		"OptionItems": [
+			{
+				"OptionText": "Ancient",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Elder",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Matured",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Fledgling",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Nascent",
+				"OptionType": "OptionItem"
+			}
+		]
+	},
+	{
+		"Title": "",
+		"OptionType": "OptionGroup",
+		"HeaderText": "This is where you may choose the World you will be entering, and traits related to them.<br>You may choose the specific time and place you'll appear, within your chosen Universe. e.g. before the start of the story, its middle, the end, etc.",
+		"Validate_Visible": {
+			"ValidationType": "Enable",
+			"MatchType": "All",
+			"Traits": [
+				"Universe"
+			]
+		},
+		"OptionItems": [
+			{
+				"OptionText": "Worlds",
+				"OptionType": "OptionItem",
+				"Traits": [
+					"Universe_World"
+				]
+			},
+			{
+				"OptionText": "Perks",
+				"OptionType": "OptionItem",
+				"Traits": [
+					"Universe_Perks"
+				]
+			}
+		]
+	},
+	{
+		"Title": "Worlds",
+		"OptionType": "OptionGroup",
+		"HeaderText": "",
+		"Validate_Visible": {
+			"ValidationType": "Enable",
+			"MatchType": "All",
+			"Traits": [
+				"Universe_World"
+			]
+		},
+		"OptionItems": [
+			{
+				"OptionText": "Marvel",
+				"OptionType": "OptionItem",
+				"Traits": [
+					"World_Marvel"
+				]
+			},
+			{
+				"OptionText": "Light-Super",
+				"OptionType": "OptionItem",
+				"Traits": [
+					"World_Light-Super"
+				]
+			},
+			{
+				"OptionText": "Sci-Fi",
+				"OptionType": "OptionItem",
+				"Traits": [
+					"World_Sci-Fi"
+				]
+			},
+			{
+				"OptionText": "Cyperpunk",
+				"OptionType": "OptionItem",
+				"Traits": [
+					"World_Cyperpunk"
+				]
+			},
+			{
+				"OptionText": "Mecha",
+				"OptionType": "OptionItem",
+				"Traits": [
+					"World_Mecha"
+				]
+			},
+			{
+				"OptionText": "DC",
+				"OptionType": "OptionItem",
+				"Traits": [
+					"World_DC"
+				]
+			},
+			{
+				"OptionText": "Grim-Super",
+				"OptionType": "OptionItem",
+				"Traits": [
+					"World_Grim-Super"
+				]
+			},
+			{
+				"OptionText": "Fantasy",
+				"OptionType": "OptionItem",
+				"Traits": [
+					"World_Fantasy"
+				]
+			},
+			{
+				"OptionText": "Mythical",
+				"OptionType": "OptionItem",
+				"Traits": [
+					"World_Mythical"
+				]
+			},
+			{
+				"OptionText": "Supernatural",
+				"OptionType": "OptionItem",
+				"Traits": [
+					"World_Supernatural"
+				]
+			},
+			{
+				"OptionText": "Zombies",
+				"OptionType": "OptionItem",
+				"Traits": [
+					"World_Zombies"
+				]
+			},
+			{
+				"OptionText": "Mundane",
+				"OptionType": "OptionItem",
+				"Traits": [
+					"World_Mundane"
+				]
+			},
+			{
+				"OptionText": "Unlisted",
+				"OptionType": "OptionItem",
+				"Traits": [
+					"World_Unlisted"
+				]
+			},
+			{
+				"OptionText": "Open All",
+				"OptionType": "OptionItem",
+				"Traits": [
+					"World_All"
+				]
+			}
+		]
+	},
+	{
+		"Title": "The Marvel Pack",
+		"OptionType": "OptionGroup",
+		"HeaderText": "These are Worlds set in its vast Multiverse.",
+		"SelectionLimit": "1",
+		"Validate_Visible": {
+			"ValidationType": "Enable",
+			"MatchType": "Any",
+			"Traits": [
+				"World_Marvel",
+				"World_All"
+			]
+		},
+		"OptionItems": [
+			{
+				"OptionText": "Custom Marvel",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Spider-Man Games",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Venom Movies",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Blade",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Sam Reimi - Spider-Man",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Spider-Man Animated",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Spider-Verse",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "X-Men Animated",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "X-Men Movies",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "MCU",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Runaways",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "The Wastelands",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "1 Million BC",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Marvel Ultimate",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Earth 616",
+				"OptionType": "OptionItem"
+			}
+		]
+	},
+	{
+		"Title": "The Boy Scout Pack",
+		"OptionType": "OptionGroup",
+		"HeaderText": "Worlds where Super-powered individuals typically fight for what is right.",
+		"SelectionLimit": "1",
+		"Validate_Visible": {
+			"ValidationType": "Enable",
+			"MatchType": "Any",
+			"Traits": [
+				"World_Light-Super",
+				"World_All"
+			]
+		},
+		"OptionItems": [
+			{
+				"OptionText": "Sam & Max",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Yu-Gi-Oh! GX",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "TMNT",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Overwatch",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Scott Pilgrim",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "The Incredibles",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Super Mario",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "My Hero Academia",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Steven Universe",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Street Fighter",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "She-Ra",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Kamen Rider",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Power Rangers",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "One Piece",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "JoJo",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Miraculous",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "PMD",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Pokémon",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Ben 10",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Sailor Moon",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Sonic",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "One-Punch Man",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Kirby",
+				"OptionType": "OptionItem"
+			},
+			{
+				"OptionText": "Dragon Ball Z",
+				"OptionType": "OptionItem"
+			}
+		]
+	}
+]
