@@ -4,19 +4,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { InterractiveViewerComponent } from './interractive-viewer/interractive-viewer.component';
-import { OptionDisplayComponent } from './interractive-viewer/option-display/option-display.component';
+import { InteractiveViewerComponent } from './interactive-viewer/interactive-viewer.component';
+import { OptionDisplayComponent } from './interactive-viewer/option-display/option-display.component';
+import { InteractiveMakerComponent } from './interactive-maker/interactive-maker.component';
+import { OptionEditComponent } from './interactive-maker/option-edit/option-edit.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		InterractiveViewerComponent,
-  OptionDisplayComponent
+		InteractiveViewerComponent,
+		OptionDisplayComponent,
+		InteractiveMakerComponent,
+		OptionEditComponent
 	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
-		HttpClientModule
+		HttpClientModule,
+		FormsModule
 	],
 	providers: [],
 	bootstrap: [

@@ -1,9 +1,10 @@
-<!------------------>
-<!-- Option Group -->
-<!------------------>
-@if ((optionGroup.Title || optionGroup.HeaderText)
-&& optionGroup.IsVisible) {
-<div class="group-1">
+<div class="group width-1 border-1">
+	<!------------------>
+	<!-- Option Group -->
+	<!------------------>
+	@if ((optionGroup.Title || optionGroup.HeaderText)
+	&& optionGroup.IsVisible) {
+
 	<div class="header-title"
 		 *ngIf="optionGroup.Title">
 		<h2>{{ optionGroup.Title }}</h2>
@@ -11,19 +12,18 @@
 	<div class="header-text"
 		 *ngIf="optionGroup.HeaderText">
 		<div>
-			<p>{{ optionGroup.HeaderText }}</p>
+			<p [innerHTML]="optionGroup.HeaderText"></p>
 		</div>
 	</div>
-</div>
-}
-<!------------------>
-<!-- Option Items -->
-<!------------------>
-@if ( optionGroup.IsVisible
-&& optionGroup.OptionItems.length > 0) {
-<div class="group-1">
+	}
+	<!------------------>
+	<!-- Option Items -->
+	<!------------------>
+	@if ( optionGroup.IsVisible
+	&& optionGroup.OptionItems.length > 0) {
 	<div *ngFor="let item of optionGroup.OptionItems"
-		 class="option center">
+		 class="option-5 center border-1">
+
 		<div [ngClass]="{'selected': item.Selected}"
 			 (click)="OnSelectionClick(item)">
 			<span style="font-size: 24px;">{{ item.OptionText }}</span>
@@ -42,5 +42,5 @@
 			</div>
 		</div>
 	</div>
+	}
 </div>
-}

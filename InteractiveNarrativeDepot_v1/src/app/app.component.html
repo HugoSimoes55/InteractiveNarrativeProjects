@@ -1,1 +1,18 @@
-<app-interractive-viewer></app-interractive-viewer>
+<div class="main menu border-1">
+	<div class="menu-option center menu-border-R"
+		 [ngClass]="{'selected': show_Viewer}"
+		 (click)="MenuViewer()">Interactive Viewer</div>
+	<div class="menu-option center menu-border-L"
+		 [ngClass]="{'selected': show_Maker}"
+		 (click)="MenuMaker()">Interactive Maker</div>
+</div>
+
+
+
+@if (show_Viewer) {
+<app-interactive-viewer></app-interactive-viewer>
+}
+
+@if (show_Maker) {
+<app-interactive-maker></app-interactive-maker>
+}

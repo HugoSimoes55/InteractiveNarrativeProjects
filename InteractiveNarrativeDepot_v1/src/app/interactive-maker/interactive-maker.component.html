@@ -1,0 +1,27 @@
+<div class="main">
+	<!-- Header -->
+	<div class="width-1">
+		<div class="button border-1">|Load Json Here|</div>
+	</div>
+	<hr>
+	<div class="width-1">
+		<div class="button border-1"
+			 (click)="SaveChanges()">Save (Todo)</div>
+		<div class="button border-1">Cancel (Todo)</div>
+	</div>
+	<!-- Root Settings -->
+	<hr>
+	||||||Add root settings here|||||
+	<!-- List of Groups -->
+	<hr>
+	<app-option-edit *ngFor="let group of loadedGroups"
+					 class="group width-1"
+					 [(Group)]="group"></app-option-edit>
+	<hr>
+	<!-- Footer -->
+	<div class="width-1">
+		<div class="button border-1"
+			 (click)="SaveChanges()">Save (Todo)</div>
+		<div class="button border-1">Cancel (Todo)</div>
+	</div>
+</div>

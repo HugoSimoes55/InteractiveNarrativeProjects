@@ -1,0 +1,84 @@
+<div class="group width-1 border-1">
+	<!------------------>
+	<!-- Option Group -->
+	<!------------------>
+	<div class="option-1 center">
+		<h2>Group - {{ optionGroup.Title || "{ Unnamed }" }}</h2>
+	</div>
+	<!-- <div class="header-title"
+		 *ngIf="optionGroup.Title">
+		<h2>{{ optionGroup.Title }}</h2>
+	</div> -->
+	<label for="Title"
+		   style="width: 100%;">Title
+		<br />
+		<input type="text"
+			   name="Title"
+			   id="Title"
+			   style="width: 50%; height:max-content;"
+			   [(ngModel)]="optionGroup.Title">
+	</label>
+	<br>
+	<label for="HeaderText"
+		   style="width: 100%;">Header
+		<br />
+		<textarea name="HeaderText"
+				  id="HeaderText"
+				  style="width: 95%; height: 150px;"
+				  [(ngModel)]="optionGroup.HeaderText"></textarea>
+	</label>
+	<label for="Visibility"
+		   style="width: 100%;">Visible by Default
+		<input type="checkbox"
+			   [(ngModel)]="optionGroup.IsVisible">
+	</label>
+	<!------------------>
+	<!-- Option Items -->
+	<!------------------>
+	<div class="option-1 center">
+		<h2>Options</h2>
+	</div>
+
+	<div *ngFor="let item of optionGroup.OptionItems"
+		 class="option-2 border-1">
+
+		<div [ngClass]="{'selected': item.Selected}"
+			 (click)="OnSelectionClick(item)">
+			<!-- <span class="center" style="font-size: 24px;">{{ item.OptionText }}</span>
+			<br/>
+			<br/> -->
+			<label for="Title"
+				   style="width: 100%;">Title
+				<br />
+				<input type="text"
+					   name="Title"
+					   id="Title"
+					   style="width: 50%; height:max-content;"
+					   [(ngModel)]="item.OptionText">
+			</label>
+			<br>
+			<br>
+			<label for="Traits"
+				   style="width: 100%;">Traits
+				<br />
+				<input type="text"
+					   name="Traits"
+					   id="Traits"
+					   [(ngModel)]="item.Traits">
+			</label>
+			<br>
+			<div *ngIf="item.hasImage"
+				 class="clearBorder center image-control"
+				 [style.height]="item.MaxHeight + 'px'"
+				 [style.width]="item.MaxHeight + 'px'">
+				<img src="{{ item.ImageURL }}"
+					 alt="{{ item.ImageText }}">
+			</div>
+			<div *ngIf="item.FlavourText">
+				<br>
+				<span>{{ item.FlavourText }}</span>
+				<br>
+			</div>
+		</div>
+	</div>
+</div>

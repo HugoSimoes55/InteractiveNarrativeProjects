@@ -14,8 +14,8 @@ export interface OptionBaseInterface {
 
 	Traits: string[];
 
-	Validate_Enabled: TraitValidationInterface;
+	TraitsForEnabled: TraitValidationInterface;
 	IsEnabled: boolean;
-	Validate_Visible: TraitValidationInterface;
+	TraitsForVisible: TraitValidationInterface;
 	IsVisible: boolean;
 }
