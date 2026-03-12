@@ -22,12 +22,10 @@
 	@if ( optionGroup.IsVisible
 	&& optionGroup.OptionItems.length > 0) {
 	<div *ngFor="let item of optionGroup.OptionItems"
-		 class="option-5 center border-1">
+		 class="option-5 center border-1 no-highlight"
+		 [ngClass]="{'selected': item.Selected}">
 
-		<div [ngClass]="{'selected': item.Selected}"
-			 (click)="OnSelectionClick(item)">
-			<span style="font-size: 24px;">{{ item.OptionText }}</span>
-			<br>
+		<div (click)="OnSelectionClick(item)">
 			<div *ngIf="item.hasImage"
 				 class="clearBorder center image-control"
 				 [style.height]="item.MaxHeight + 'px'"
@@ -35,9 +33,12 @@
 				<img src="{{ item.ImageURL }}"
 					 alt="{{ item.ImageText }}">
 			</div>
-			<div *ngIf="item.FlavourText">
+			<span style="font-size: 24px;">{{ item.OptionTitle }}</span>
+			<br>
+			<div *ngIf="item.OptionText"
+				 class=" vertical-margin-3">
 				<br>
-				<span>{{ item.FlavourText }}</span>
+				<span>{{ item.OptionText }}</span>
 				<br>
 			</div>
 		</div>

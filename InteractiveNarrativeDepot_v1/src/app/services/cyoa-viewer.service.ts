@@ -26,19 +26,18 @@ export class CYOAViewerService {
 	}
 
 	LoadJsonData(jsonText: string) {
+		this.UpdateViewerGroups(JSON.parse(jsonText));
+	}
 
-		var jsonObj: Object[] = JSON.parse(jsonText);
-
-		this.ViewerGroups = [];
-
-		jsonObj.forEach((baseOption: OptionGroupInterface) => this.ViewerGroups.push(baseOption));
+	UpdateViewerGroups(newGroups: OptionGroupInterface[]) {
+		this.ViewerGroups = newGroups;
 
 		this.GenerateIDs();
 
 		this.ValidateRequirements();
 	}
 
-	UpdateSubjects() {
+	private UpdateSubjects() {
 		this.AllOptionsEvent.next(this.ViewerGroups);
 		this.VisibleOptionsEvent.next(this.ViewerGroups.filter(x => x.IsVisible));
 	}
@@ -54,7 +53,7 @@ export class CYOAViewerService {
 			|| deselection) {
 			selectedGroup.OptionItems.find((option: OptionItemInterface) => option.ID == optionItem.ID).Selected = !optionItem.Selected;
 
-			this.ViewerGroups.find((group) => group.ID == selectedGroup.ID)[0] = selectedGroup;
+			//this.ViewerGroups.find((group) => group.ID == selectedGroup.ID)[0] = selectedGroup;
 
 			this.ValidateRequirements();
 		}
@@ -68,7 +67,7 @@ export class CYOAViewerService {
 	///// ID //////
 	///////////////
 
-	GenerateIDs() {
+	private GenerateIDs() {
 		let i1: number = 1;
 
 		this.ViewerGroups.forEach((opGroup: OptionGroupInterface) => {
@@ -88,7 +87,7 @@ export class CYOAViewerService {
 		});
 	}
 
-	FindOption(optionID: string, optionSearch: OptionSearchType) {
+	private FindOption(optionID: string, optionSearch: OptionSearchType) {
 		if (optionSearch == OptionSearchType.GetOptionGroupByItemID) {
 
 			let groupID = optionID.substring(0, optionID.lastIndexOf("_"));
@@ -101,7 +100,7 @@ export class CYOAViewerService {
 	///// Traits //////
 	///////////////////
 
-	ValidateRequirements() {
+	private ValidateRequirements() {
 		this.LoadSelectedTraits();
 
 		this.ValidateEnabledOptions();
@@ -113,7 +112,7 @@ export class CYOAViewerService {
 		this.UpdateSubjects();
 	}
 
-	GetAllTraits() {
+	private GetAllTraits() {
 		let traits: string[] = [];
 
 		this.ViewerGroups.forEach((group) => {
@@ -132,18 +131,20 @@ export class CYOAViewerService {
 		this.AllTraits = traits;
 	}
 
-	LoadSelectedTraits() {
+	private LoadSelectedTraits() {
 		this.SelectedTraits = [];
 
 		this.ViewerGroups.filter(group => group.OptionItems.length > 0).forEach(
 			(group) => group.OptionItems.filter((item) => item.Selected && item.Traits?.length > 0).forEach(
-				item => this.SelectedTraits = this.SelectedTraits.concat(item.Traits)));
+				item => this.SelectedTraits.push(item.Traits)
+			)
+		);
 
-		//console.log("These are the selected traits:");
-		//console.log(this.SelectedTraits);
+		console.log("These are the selected traits:");
+		console.log(this.SelectedTraits);
 	}
 
-	ValidateEnabledOptions() {
+	private ValidateEnabledOptions() {
 		this.ViewerGroups.forEach((group) => {
 			let groupEnabled = true;
 
@@ -166,20 +167,21 @@ export class CYOAViewerService {
 		});
 	}
 
-	ValidateVisibleOptions() {
+	private ValidateVisibleOptions() {
 
 		this.ViewerGroups.forEach((group) => {
 			let groupVal: TraitValidationInterface = group.TraitsForVisible;
-			let groupVisible: boolean = true;
 
 			if (!groupVal) {
 				group.IsVisible = true;
 				return;
 			}
 
+			let traitValList: string[] = groupVal?.Traits.split(',');
+			let groupVisible: boolean = true;
 			let matchCount: number = 0;
 
-			groupVal.Traits.forEach((trait) => {
+			traitValList.forEach((trait) => {
 				if (this.SelectedTraits.includes(trait)) {
 					matchCount++;
 				};
@@ -190,7 +192,7 @@ export class CYOAViewerService {
 					groupVisible = matchCount > 0;
 					break;
 				case "All":
-					groupVisible = matchCount == groupVal.Traits.length;
+					groupVisible = matchCount == traitValList.length;
 					break;
 			}
 
@@ -201,20 +203,4 @@ export class CYOAViewerService {
 			group.IsVisible = groupVisible;
 		});
 	}
-	/////////////////
-	///// Maker /////
-	/////////////////
-
-	AddGroup() {
-
-		// let test: OptionGroupInterface = {} as OptionGroupInterface;
-
-		// test.Title = "New Group";
-
-		// this.MakerGroups.push(test);
-
-		// this.UpdateSubjects();
-	}
-
-
 }

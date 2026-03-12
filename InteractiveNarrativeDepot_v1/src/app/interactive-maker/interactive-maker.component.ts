@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OptionGroupInterface } from '../interfaces/option-group.interface';
-import { CYOAViewerService } from '../services/cyoa-viewer.service';
+import { CYOAMakerService } from '../services/cyoa-maker.service';
 
 @Component({
 	selector: 'app-interactive-maker',
@@ -11,7 +11,7 @@ export class InteractiveMakerComponent implements OnInit {
 
 	loadedGroups: OptionGroupInterface[] = [];
 
-	constructor(private cyoaServ: CYOAViewerService) {
+	constructor(private cyoaServ: CYOAMakerService) {
 
 	}
 
@@ -26,6 +26,6 @@ export class InteractiveMakerComponent implements OnInit {
 	}
 
 	SaveChanges() {
-		console.log(this.loadedGroups);
+		this.cyoaServ.Save();
 	}
 }

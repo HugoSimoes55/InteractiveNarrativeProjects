@@ -5,57 +5,53 @@
 		"OptionType": "OptionGroup",
 		"OptionItems": [
 			{
-				"OptionText": "Potential",
+				"OptionTitle": "Potential",
 				"OptionType": "OptionItem",
-				"Traits": [
-					"Potential"
-				]
+				"Traits": "Potential"
 			},
 			{
-				"OptionText": "Universe",
+				"OptionTitle": "Universe",
 				"OptionType": "OptionItem",
-				"Traits": [
-					"Universe"
-				]
+				"Traits": "Universe"
 			},
 			{
-				"OptionText": "Character",
+				"OptionTitle": "Character",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Symbiotes",
+				"OptionTitle": "Symbiotes",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Abilities",
+				"OptionTitle": "Abilities",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Items",
+				"OptionTitle": "Items",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Companions",
+				"OptionTitle": "Companions",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Plot Lines",
+				"OptionTitle": "Plot Lines",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Drawbacks",
+				"OptionTitle": "Drawbacks",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Points",
+				"OptionTitle": "Points",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Reward",
+				"OptionTitle": "Reward",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Information",
+				"OptionTitle": "Information",
 				"OptionType": "OptionItem"
 			}
 		]
@@ -68,29 +64,27 @@
 		"TraitsForVisible": {
 			"ValidationType": "Enable",
 			"MatchType": "All",
-			"Traits": [
-				"Potential"
-			]
+			"Traits": "Potential"
 		},
 		"OptionItems": [
 			{
-				"OptionText": "Ancient",
+				"OptionTitle": "Ancient",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Elder",
+				"OptionTitle": "Elder",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Matured",
+				"OptionTitle": "Matured",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Fledgling",
+				"OptionTitle": "Fledgling",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Nascent",
+				"OptionTitle": "Nascent",
 				"OptionType": "OptionItem"
 			}
 		]
@@ -102,24 +96,18 @@
 		"TraitsForVisible": {
 			"ValidationType": "Enable",
 			"MatchType": "All",
-			"Traits": [
-				"Universe"
-			]
+			"Traits": "Universe"
 		},
 		"OptionItems": [
 			{
-				"OptionText": "Worlds",
+				"OptionTitle": "Worlds",
 				"OptionType": "OptionItem",
-				"Traits": [
-					"Universe_World"
-				]
+				"Traits": "Universe_World"
 			},
 			{
-				"OptionText": "Perks",
+				"OptionTitle": "Perks",
 				"OptionType": "OptionItem",
-				"Traits": [
-					"Universe_Perks"
-				]
+				"Traits": "Universe_Perks"
 			}
 		]
 	},
@@ -130,108 +118,78 @@
 		"TraitsForVisible": {
 			"ValidationType": "Enable",
 			"MatchType": "All",
-			"Traits": [
-				"Universe_World"
-			]
+			"Traits": "Universe_World"
 		},
 		"OptionItems": [
 			{
-				"OptionText": "Marvel",
+				"OptionTitle": "Marvel",
 				"OptionType": "OptionItem",
-				"Traits": [
-					"World_Marvel"
-				]
+				"Traits": "World_Marvel"
 			},
 			{
-				"OptionText": "Light-Super",
+				"OptionTitle": "Light-Super",
 				"OptionType": "OptionItem",
-				"Traits": [
-					"World_Light-Super"
-				]
+				"Traits": "World_Light-Super"
 			},
 			{
-				"OptionText": "Sci-Fi",
+				"OptionTitle": "Sci-Fi",
 				"OptionType": "OptionItem",
-				"Traits": [
-					"World_Sci-Fi"
-				]
+				"Traits": "World_Sci-Fi"
 			},
 			{
-				"OptionText": "Cyperpunk",
+				"OptionTitle": "Cyperpunk",
 				"OptionType": "OptionItem",
-				"Traits": [
-					"World_Cyperpunk"
-				]
+				"Traits": "World_Cyperpunk"
 			},
 			{
-				"OptionText": "Mecha",
+				"OptionTitle": "Mecha",
 				"OptionType": "OptionItem",
-				"Traits": [
-					"World_Mecha"
-				]
+				"Traits": "World_Mecha"
 			},
 			{
-				"OptionText": "DC",
+				"OptionTitle": "DC",
 				"OptionType": "OptionItem",
-				"Traits": [
-					"World_DC"
-				]
+				"Traits": "World_DC"
 			},
 			{
-				"OptionText": "Grim-Super",
+				"OptionTitle": "Grim-Super",
 				"OptionType": "OptionItem",
-				"Traits": [
-					"World_Grim-Super"
-				]
+				"Traits": "World_Grim-Super"
 			},
 			{
-				"OptionText": "Fantasy",
+				"OptionTitle": "Fantasy",
 				"OptionType": "OptionItem",
-				"Traits": [
-					"World_Fantasy"
-				]
+				"Traits": "World_Fantasy"
 			},
 			{
-				"OptionText": "Mythical",
+				"OptionTitle": "Mythical",
 				"OptionType": "OptionItem",
-				"Traits": [
-					"World_Mythical"
-				]
+				"Traits": "World_Mythical"
 			},
 			{
-				"OptionText": "Supernatural",
+				"OptionTitle": "Supernatural",
 				"OptionType": "OptionItem",
-				"Traits": [
-					"World_Supernatural"
-				]
+				"Traits": "World_Supernatural"
 			},
 			{
-				"OptionText": "Zombies",
+				"OptionTitle": "Zombies",
 				"OptionType": "OptionItem",
-				"Traits": [
-					"World_Zombies"
-				]
+				"Traits": "World_Zombies"
 			},
 			{
-				"OptionText": "Mundane",
+				"OptionTitle": "Mundane",
 				"OptionType": "OptionItem",
-				"Traits": [
-					"World_Mundane"
-				]
+				"Traits": "World_Mundane"
 			},
 			{
-				"OptionText": "Unlisted",
+				"OptionTitle": "Unlisted",
 				"OptionType": "OptionItem",
-				"Traits": [
-					"World_Unlisted"
-				]
+				"Traits": "World_Unlisted"
 			},
 			{
-				"OptionText": "Open All",
+				"OptionTitle": "Open All",
 				"OptionType": "OptionItem",
-				"Traits": [
-					"World_All"
-				]
+				"Traits": "World_All"
 			}
 		]
 	},
@@ -243,70 +201,67 @@
 		"TraitsForVisible": {
 			"ValidationType": "Enable",
 			"MatchType": "Any",
-			"Traits": [
-				"World_Marvel",
-				"World_All"
-			]
+			"Traits": "World_Marvel,World_All"
 		},
 		"OptionItems": [
 			{
-				"OptionText": "Custom Marvel",
+				"OptionTitle": "Custom Marvel",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Spider-Man Games",
+				"OptionTitle": "Spider-Man Games",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Venom Movies",
+				"OptionTitle": "Venom Movies",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Blade",
+				"OptionTitle": "Blade",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Sam Reimi - Spider-Man",
+				"OptionTitle": "Sam Reimi - Spider-Man",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Spider-Man Animated",
+				"OptionTitle": "Spider-Man Animated",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Spider-Verse",
+				"OptionTitle": "Spider-Verse",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "X-Men Animated",
+				"OptionTitle": "X-Men Animated",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "X-Men Movies",
+				"OptionTitle": "X-Men Movies",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "MCU",
+				"OptionTitle": "MCU",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Runaways",
+				"OptionTitle": "Runaways",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "The Wastelands",
+				"OptionTitle": "The Wastelands",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "1 Million BC",
+				"OptionTitle": "1 Million BC",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Marvel Ultimate",
+				"OptionTitle": "Marvel Ultimate",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Earth 616",
+				"OptionTitle": "Earth 616",
 				"OptionType": "OptionItem"
 			}
 		]
@@ -319,106 +274,103 @@
 		"TraitsForVisible": {
 			"ValidationType": "Enable",
 			"MatchType": "Any",
-			"Traits": [
-				"World_Light-Super",
-				"World_All"
-			]
+			"Traits": "World_Light-Super,World_All"
 		},
 		"OptionItems": [
 			{
-				"OptionText": "Sam & Max",
+				"OptionTitle": "Sam & Max",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Yu-Gi-Oh! GX",
+				"OptionTitle": "Yu-Gi-Oh! GX",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "TMNT",
+				"OptionTitle": "TMNT",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Overwatch",
+				"OptionTitle": "Overwatch",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Scott Pilgrim",
+				"OptionTitle": "Scott Pilgrim",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "The Incredibles",
+				"OptionTitle": "The Incredibles",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Super Mario",
+				"OptionTitle": "Super Mario",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "My Hero Academia",
+				"OptionTitle": "My Hero Academia",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Steven Universe",
+				"OptionTitle": "Steven Universe",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Street Fighter",
+				"OptionTitle": "Street Fighter",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "She-Ra",
+				"OptionTitle": "She-Ra",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Kamen Rider",
+				"OptionTitle": "Kamen Rider",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Power Rangers",
+				"OptionTitle": "Power Rangers",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "One Piece",
+				"OptionTitle": "One Piece",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "JoJo",
+				"OptionTitle": "JoJo",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Miraculous",
+				"OptionTitle": "Miraculous",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "PMD",
+				"OptionTitle": "PMD",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Pokémon",
+				"OptionTitle": "Pokémon",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Ben 10",
+				"OptionTitle": "Ben 10",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Sailor Moon",
+				"OptionTitle": "Sailor Moon",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Sonic",
+				"OptionTitle": "Sonic",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "One-Punch Man",
+				"OptionTitle": "One-Punch Man",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Kirby",
+				"OptionTitle": "Kirby",
 				"OptionType": "OptionItem"
 			},
 			{
-				"OptionText": "Dragon Ball Z",
+				"OptionTitle": "Dragon Ball Z",
 				"OptionType": "OptionItem"
 			}
 		]

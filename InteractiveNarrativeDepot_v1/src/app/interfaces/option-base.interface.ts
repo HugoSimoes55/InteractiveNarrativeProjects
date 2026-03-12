@@ -12,7 +12,7 @@ export interface OptionBaseInterface {
 	ImageMaxHeight: number;
 	ImageMaxWidth: number;
 
-	Traits: string[];
+	Traits: string;
 
 	TraitsForEnabled: TraitValidationInterface;
 	IsEnabled: boolean;

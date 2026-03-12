@@ -1,26 +1,13 @@
 .menu {
-	width: 95%;
 	display: flex;
 	flex-wrap: wrap;
 	align-self: flex-start;
 }
 
 .menu-option {
+	user-select: none;
 	flex: 1 0 calc(20% - 2px);
 	align-self: center;
-	box-sizing: border-box;
 	font-size: 28px;
 	cursor: pointer;
-}
-
-.menu-border-L {
-	border-style: solid;
-	border-color: black;
-	border-width: 0 0 0 1px;
-}
-
-.menu-border-R {
-	border-style: solid;
-	border-color: black;
-	border-width: 0 1px 0 0;
 }
