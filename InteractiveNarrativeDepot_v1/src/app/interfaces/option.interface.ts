@@ -15,7 +15,24 @@ export interface OptionBaseInterface {
 	Traits: string;
 
 	TraitsForEnabled: TraitValidationInterface;
+	TraitsForNotEnabled: TraitValidationInterface;
 	IsEnabled: boolean;
 	TraitsForVisible: TraitValidationInterface;
+	TraitsForNotVisible: TraitValidationInterface;
 	IsVisible: boolean;
+}
+
+export interface OptionGroupInterface extends OptionBaseInterface {
+
+	HeaderText: string;
+	OptionItems: OptionItemInterface[];
+	OptionItemsPerRow: number;
+	SelectionLimit: number;
+}
+
+export interface OptionItemInterface extends OptionBaseInterface {
+
+	OptionTitle: string;
+	OptionText: string;
+	Selected: boolean;
 }

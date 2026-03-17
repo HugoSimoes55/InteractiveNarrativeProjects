@@ -9,6 +9,7 @@ import { OptionDisplayComponent } from './interactive-viewer/option-display/opti
 import { InteractiveMakerComponent } from './interactive-maker/interactive-maker.component';
 import { OptionEditComponent } from './interactive-maker/option-edit/option-edit.component';
 import { FormsModule } from '@angular/forms';
+import { OptionTraitsComponent } from './interactive-maker/option-edit/option-traits/option-traits.component';
 
 @NgModule({
 	declarations: [
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
 		InteractiveViewerComponent,
 		OptionDisplayComponent,
 		InteractiveMakerComponent,
-		OptionEditComponent
+		OptionEditComponent,
+		OptionTraitsComponent
 	],
 	imports: [
 		BrowserModule,

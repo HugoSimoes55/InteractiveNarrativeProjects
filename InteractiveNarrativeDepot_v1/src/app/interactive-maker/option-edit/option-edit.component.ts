@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { OptionGroupInterface } from '../../interfaces/option-group.interface';
 import { CYOAMakerService } from '../../services/cyoa-maker.service';
+import { OptionGroupInterface } from '../../interfaces/option.interface';
 
 @Component({
 	selector: 'app-option-edit',
@@ -10,6 +10,8 @@ import { CYOAMakerService } from '../../services/cyoa-maker.service';
 export class OptionEditComponent {
 
 	@Input("Group") optionGroup: OptionGroupInterface;
+
+	expanded: boolean = false;
 
 	constructor(private cyoaServ: CYOAMakerService) {
 
@@ -21,6 +23,10 @@ export class OptionEditComponent {
 				this.optionGroup.SelectionLimit = 0;
 			}
 		}
+	}
+
+	expandGroup() {
+		this.expanded = !this.expanded;
 	}
 
 	NewOption() {

@@ -3,4 +3,8 @@
 <div class="main">
 	<app-option-display *ngFor="let item of loadedGroups"
 						[Group]="item"></app-option-display>
+	<div class="width-1 center">
+		<div class="button border-1"
+			 (click)="ResetSelections()">Reset Selections</div>
+	</div>
 </div>

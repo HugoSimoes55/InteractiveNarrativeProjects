@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OptionGroupInterface } from '../interfaces/option-group.interface';
+import { OptionGroupInterface } from '../interfaces/option.interface';
 import { CYOAViewerService } from '../services/cyoa-viewer.service';
 
 @Component({
@@ -19,5 +19,9 @@ export class InteractiveViewerComponent implements OnInit {
 		this.cyoaServ.VisibleOptionsEvent.subscribe((data) => {
 			this.loadedGroups = data as OptionGroupInterface[];
 		});
+	}
+
+	ResetSelections() {
+		this.cyoaServ.ResetSelections();
 	}
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { OptionGroupInterface } from '../interfaces/option-group.interface';
 import { CYOAMakerService } from '../services/cyoa-maker.service';
+import { OptionGroupInterface } from '../interfaces/option.interface';
 
 @Component({
 	selector: 'app-interactive-maker',

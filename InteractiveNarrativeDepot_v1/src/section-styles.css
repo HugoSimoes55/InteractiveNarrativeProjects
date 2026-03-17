@@ -76,27 +76,27 @@
 }
 
 [class*="option"] {
-	align-self: center;
+	/* align-self: stretch; */
 	padding: 3px;
 	margin: 1px;
 }
 
 .option-1 {
-	flex: 1 0 calc(100% - 2px);
+	flex: 1 1 calc(100% - 2px);
 }
 
 .option-2 {
-	flex: 1 0 calc(50% - 2px);
+	flex: 1 1 calc(50% - 2px);
 }
 
 .option-3 {
-	flex: 1 0 calc((100%/3) - 2px);
+	flex: 1 1 calc((100%/3) - 2px);
 }
 
 .option-4 {
-	flex: 1 0 calc(25% - 2px);
+	flex: 1 1 calc(25% - 2px);
 }
 
 .option-5 {
-	flex: 1 0 calc(20% - 2px);
+	flex: 1 1 calc(20% - 2px);
 }

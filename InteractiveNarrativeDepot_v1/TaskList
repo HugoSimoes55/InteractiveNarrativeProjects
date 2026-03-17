@@ -21,6 +21,7 @@ Add recursive group and option validation
 
 Create JSON Maker
 
+Maker: Make groups expandable and retractable
 Freeze current group at the top of the page (similar to freezing panes on excel)
 Alternatively, have a menu on the side with bookmarks to all titled groups
 

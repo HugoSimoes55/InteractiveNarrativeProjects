@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
-import { OptionGroupInterface } from '../interfaces/option-group.interface';
-import { OptionBaseInterface } from '../interfaces/option-base.interface';
 import { BehaviorSubject } from 'rxjs';
-import { OptionItemInterface } from '../interfaces/option-item.interface';
 import { OptionSearchType } from '../Enums/option-search-type.enum';
+import { OptionBaseInterface, OptionGroupInterface, OptionItemInterface } from '../interfaces/option.interface';
 import { TraitValidationInterface } from '../interfaces/trait-validation.interface';
 
 @Injectable({
@@ -32,9 +30,17 @@ export class CYOAViewerService {
 	UpdateViewerGroups(newGroups: OptionGroupInterface[]) {
 		this.ViewerGroups = newGroups;
 
+		this.InitializeViewerAttributes();
+
 		this.GenerateIDs();
 
 		this.ValidateRequirements();
+	}
+
+	private InitializeViewerAttributes() {
+		this.ViewerGroups.forEach((group: OptionGroupInterface) => {
+			group.OptionItemsPerRow = (group.OptionItemsPerRow || 5);
+		});
 	}
 
 	private UpdateSubjects() {
@@ -60,7 +66,14 @@ export class CYOAViewerService {
 	}
 
 	ResetSelections() {
-		// ToDo
+
+		this.ViewerGroups.forEach((group: OptionGroupInterface) => {
+			group.OptionItems.forEach((option: OptionItemInterface) => {
+				option.Selected = false;
+			});
+		});
+
+		this.ValidateRequirements();
 	}
 
 	///////////////
@@ -101,6 +114,7 @@ export class CYOAViewerService {
 	///////////////////
 
 	private ValidateRequirements() {
+
 		this.LoadSelectedTraits();
 
 		this.ValidateEnabledOptions();
@@ -144,63 +158,140 @@ export class CYOAViewerService {
 		console.log(this.SelectedTraits);
 	}
 
+	// private ValidateEnabledOptions() {
+	// 	this.ViewerGroups.forEach((group) => {
+	// 		let groupEnabled = true;
+
+	// 		// Add group validation code here
+
+	// 		group.IsEnabled = groupEnabled;
+
+	// 		group.OptionItems.forEach((item) => {
+	// 			if (!groupEnabled) {
+	// 				item.IsEnabled = false;
+	// 				return;
+	// 			}
+
+	// 			let itemEnabled = true;
+
+	// 			// Add item validation code here
+
+	// 			item.IsEnabled = itemEnabled;
+	// 		});
+	// 	});
+	// }
+
 	private ValidateEnabledOptions() {
+
 		this.ViewerGroups.forEach((group) => {
-			let groupEnabled = true;
+			// let groupNotEnable: TraitValidationInterface = group.TraitsForNotEnabled;
 
-			// Add group validation code here
+			// let groupNotEnableBool: boolean = this.GenericValidateTraits(groupNotEnable);
 
-			group.IsEnabled = groupEnabled;
+			// if (groupNotEnable
+			// 	&& groupNotEnableBool) {
+			// 	group.IsEnabled = false;
 
-			group.OptionItems.forEach((item) => {
-				if (!groupEnabled) {
+			// 	group.OptionItems.forEach((item: OptionItemInterface) => {
+			// 		item.IsEnabled = true;
+			// 	});
+			// }
+			// else {
+			// let groupEnable: TraitValidationInterface = group.TraitsForEnabled;
+
+			// let groupEnableBool: boolean = this.GenericValidateTraits(groupEnable);
+
+			// group.IsEnabled = groupEnableBool;
+
+			group.OptionItems.forEach((item: OptionItemInterface) => {
+				let itemNotEnable: TraitValidationInterface = item.TraitsForNotEnabled;
+
+				let itemNotEnableBool: boolean = this.GenericValidateTraits(itemNotEnable);
+
+				if (itemNotEnable
+					&& itemNotEnableBool) {
 					item.IsEnabled = false;
-					return;
 				}
+				else {
+					let itemEnable: TraitValidationInterface = item.TraitsForEnabled;
 
-				let itemEnabled = true;
+					let itemEnableBool: boolean = this.GenericValidateTraits(itemEnable);
 
-				// Add item validation code here
-
-				item.IsEnabled = itemEnabled;
+					item.IsEnabled = itemEnableBool;
+				}
 			});
+			// }
 		});
 	}
 
 	private ValidateVisibleOptions() {
 
 		this.ViewerGroups.forEach((group) => {
-			let groupVal: TraitValidationInterface = group.TraitsForVisible;
+			let groupNotVis: TraitValidationInterface = group.TraitsForNotVisible;
 
-			if (!groupVal) {
-				group.IsVisible = true;
-				return;
+			let groupNotVisBool: boolean = this.GenericValidateTraits(groupNotVis);
+
+			if (groupNotVis
+				&& groupNotVisBool) {
+				group.IsVisible = false;
+
+				group.OptionItems.forEach((item: OptionItemInterface) => {
+					item.IsVisible = true;
+				});
 			}
+			else {
+				let groupVis: TraitValidationInterface = group.TraitsForVisible;
 
-			let traitValList: string[] = groupVal?.Traits.split(',');
-			let groupVisible: boolean = true;
-			let matchCount: number = 0;
+				let groupVisBool: boolean = this.GenericValidateTraits(groupVis);
 
-			traitValList.forEach((trait) => {
-				if (this.SelectedTraits.includes(trait)) {
-					matchCount++;
-				};
-			});
+				group.IsVisible = groupVisBool;
 
-			switch (groupVal.MatchType) {
-				case "Any":
-					groupVisible = matchCount > 0;
-					break;
-				case "All":
-					groupVisible = matchCount == traitValList.length;
-					break;
+				group.OptionItems.forEach((item: OptionItemInterface) => {
+					let itemNotVis: TraitValidationInterface = item.TraitsForNotVisible;
+
+					let itemNotVisBool: boolean = this.GenericValidateTraits(itemNotVis);
+
+					if (itemNotVis
+						&& itemNotVisBool) {
+						item.IsVisible = false;
+					}
+					else {
+						let itemVis: TraitValidationInterface = item.TraitsForVisible;
+
+						let itemVisBool: boolean = this.GenericValidateTraits(itemVis);
+
+						item.IsVisible = itemVisBool;
+					}
+				});
 			}
-
-			if (groupVal.ValidationType != "Enable") {
-				groupVisible = !groupVisible;
-			}
-
-			group.IsVisible = groupVisible;
 		});
+	}
+
+	private GenericValidateTraits(val: TraitValidationInterface): boolean {
+		if (!val) {
+			return true;
+		}
+
+		let result: boolean = true;
+
+		let valTraits: string[] = val?.Traits.split(',');
+		let matchCount: number = 0;
+
+		valTraits.forEach((trait) => {
+			if (this.SelectedTraits.includes(trait)) {
+				matchCount++;
+			};
+		});
+
+		switch (val.MatchType) {
+			case "Any":
+				result = matchCount > 0;
+				break;
+			case "All":
+				result = matchCount == valTraits.length;
+				break;
+		}
+
+		return result;
 	}
 }

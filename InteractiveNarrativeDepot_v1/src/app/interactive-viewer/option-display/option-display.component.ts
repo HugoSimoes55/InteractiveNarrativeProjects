@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { OptionGroupInterface } from '../../interfaces/option-group.interface';
-import { OptionItemInterface } from '../../interfaces/option-item.interface';
+import { OptionGroupInterface, OptionItemInterface } from '../../interfaces/option.interface';
 import { CYOAViewerService } from '../../services/cyoa-viewer.service';
 
 @Component({
@@ -27,8 +26,8 @@ export class OptionDisplayComponent implements OnInit {
 	// }
 
 	OnSelectionClick(optionItem: OptionItemInterface) {
-
-		this.cyoaServ.SelectOption(optionItem);
-
+		if (optionItem.IsEnabled) {
+			this.cyoaServ.SelectOption(optionItem);
+		}
 	}
 }

@@ -16,11 +16,13 @@
 			},
 			{
 				"OptionTitle": "Character",
-				"OptionType": "OptionItem"
+				"OptionType": "OptionItem",
+				"Traits": "Character"
 			},
 			{
 				"OptionTitle": "Symbiotes",
-				"OptionType": "OptionItem"
+				"OptionType": "OptionItem",
+				"Traits": "Symbiotes"
 			},
 			{
 				"OptionTitle": "Abilities",
@@ -90,7 +92,7 @@
 		]
 	},
 	{
-		"Title": "",
+		"Title": "Universe",
 		"OptionType": "OptionGroup",
 		"HeaderText": "This is where you may choose the World you will be entering, and traits related to them.<br>You may choose the specific time and place you'll appear, within your chosen Universe. e.g. before the start of the story, its middle, the end, etc.",
 		"TraitsForVisible": {
@@ -372,6 +374,183 @@
 			{
 				"OptionTitle": "Dragon Ball Z",
 				"OptionType": "OptionItem"
+			}
+		]
+	},
+	{
+		"Title": "Character",
+		"OptionType": "OptionGroup",
+		"HeaderText": "This is where you will be able to design who you will be and your method of entry into the world you will soon inhabit.",
+		"SelectionLimit": null,
+		"TraitsForVisible": {
+			"ValidationType": "Enable",
+			"MatchType": "All",
+			"Traits": "Character"
+		},
+		"OptionItems": [
+			{
+				"OptionTitle": "Incarnation",
+				"OptionType": "OptionItem",
+				"Traits": "Char_Incarnation"
+			}
+		]
+	},
+	{
+		"Title": "Incarnation",
+		"OptionType": "OptionGroup",
+		"HeaderText": "This is how you will enter this world.",
+		"SelectionLimit": null,
+		"TraitsForVisible": {
+			"ValidationType": "Enable",
+			"MatchType": "All",
+			"Traits": "Char_Incarnation"
+		},
+		"OptionItems": [
+			{
+				"OptionTitle": "Reincarnation",
+				"OptionText": "You will be reborn in the world you'll soon inhabit. You may design your appearance and the age at which you regain your memories. You may also design your personality and the choices you made in life up until the very moment that you regain your memories.",
+				"OptionType": "OptionItem",
+				"Traits": "Char_Incarnation"
+			},
+			{
+				"OptionTitle": "Drop-In",
+				"OptionText": "You will be dropped into the world you will soon inhabit as you currently are or design your appearance. (You won't gain access to the full character creator.)<br><br>You may choose whether this is a literal drop, as in falling from the sky, or if you are simply teleported onto a back ally somewhere in the world.",
+				"OptionType": "OptionItem",
+				"Traits": "Char_Incarnation"
+			},
+			{
+				"OptionTitle": "Self-Insert",
+				"OptionText": "You may choose to take the place of a pre-existing person from the world you will soon inhabit. Whether this is the result of you taking over their mind and soul, merging with them, their untimely death leaving an opening for you to enter, or something else is up to your discretion. (You'll have limited access to the Character Creator.)",
+				"OptionType": "OptionItem",
+				"Traits": "Char_Incarnation"
+			}
+		]
+	},
+	{
+		"Title": "Symbiotes",
+		"OptionType": "OptionGroup",
+		"HeaderText": "Here you may choose your partner, their identity, and the nature of your relationship.",
+		"SelectionLimit": null,
+		"TraitsForVisible": {
+			"ValidationType": "Enable",
+			"MatchType": "All",
+			"Traits": "Symbiotes"
+		},
+		"OptionItems": [
+			{
+				"OptionTitle": "Klyntar",
+				"OptionType": "OptionItem",
+				"Traits": "Symb_Klyntar"
+			},
+			{
+				"OptionTitle": "Identity",
+				"OptionType": "OptionItem",
+				"Traits": "Symb_Identity"
+			},
+			{
+				"OptionTitle": "Relationship",
+				"OptionType": "OptionItem",
+				"Traits": "Symb_Relation"
+			}
+		]
+	},
+	{
+		"Title": "Symbiote Identity",
+		"OptionType": "OptionGroup",
+		"HeaderText": "Here you may choose your partner, their identity, and the nature of your relationship.",
+		"SelectionLimit": null,
+		"OptionItemsPerRow": "3",
+		"TraitsForVisible": {
+			"ValidationType": "Enable",
+			"MatchType": "All",
+			"Traits": "Symb_Identity"
+		},
+		"OptionItems": [
+			{
+				"OptionTitle": "Symbiote Sex: Male",
+				"OptionType": "OptionItem",
+				"Traits": "Symb_Ident_SexMale",
+				"TraitsForNotEnabled": {
+					"MatchType": "Any",
+					"Traits": "Symb_Ident_SexOther,Symb_Ident_SexFemale"
+				}
+			},
+			{
+				"OptionTitle": "Symbiote Sex: Other",
+				"OptionType": "OptionItem",
+				"Traits": "Symb_Ident_SexOther",
+				"TraitsForNotEnabled": {
+					"MatchType": "Any",
+					"Traits": "Symb_Ident_SexMale,Symb_Ident_SexFemale"
+				}
+			},
+			{
+				"OptionTitle": "Symbiote Sex: Female",
+				"OptionType": "OptionItem",
+				"Traits": "Symb_Ident_SexFemale",
+				"TraitsForNotEnabled": {
+					"MatchType": "Any",
+					"Traits": "Symb_Ident_SexMale,Symb_Ident_SexOther"
+				}
+			},
+			{
+				"OptionTitle": "Symbiote Gender: Masculine",
+				"OptionType": "OptionItem",
+				"Traits": "Symb_Ident_GenderMasc",
+				"TraitsForNotEnabled": {
+					"MatchType": "Any",
+					"Traits": "Symb_Ident_GenderOther,Symb_Ident_GenderFem"
+				}
+			},
+			{
+				"OptionTitle": "Symbiote Gender: Other",
+				"OptionType": "OptionItem",
+				"Traits": "Symb_Ident_GenderOther",
+				"TraitsForNotEnabled": {
+					"MatchType": "Any",
+					"Traits": "Symb_Ident_GenderMasc,Symb_Ident_GenderFem"
+				}
+			},
+			{
+				"OptionTitle": "Symbiote Gender: Female",
+				"OptionType": "OptionItem",
+				"Traits": "Symb_Ident_GenderFem",
+				"TraitsForNotEnabled": {
+					"MatchType": "Any",
+					"Traits": "Symb_Ident_GenderMasc,Symb_Ident_GenderOther"
+				}
+			},
+			{
+				"OptionTitle": "Aesthetic: Clothing",
+				"OptionType": "OptionItem",
+				"Traits": "Symb_Ident_AesthCloth",
+				"TraitsForNotEnabled": {
+					"MatchType": "Any",
+					"Traits": "Symb_Ident_AesthClassic,Symb_Ident_AesthSlime"
+				}
+			},
+			{
+				"OptionTitle": "Aesthetic: Classic",
+				"OptionType": "OptionItem",
+				"Traits": "Symb_Ident_AesthClassic",
+				"TraitsForNotEnabled": {
+					"MatchType": "Any",
+					"Traits": "Symb_Ident_AesthCloth,Symb_Ident_AesthSlime"
+				}
+			},
+			{
+				"OptionTitle": "Aesthetic: Slime",
+				"OptionType": "OptionItem",
+				"Traits": "Symb_Ident_AesthSlime",
+				"TraitsForNotEnabled": {
+					"MatchType": "Any",
+					"Traits": "Symb_Ident_AesthCloth,Symb_Ident_AesthClassic"
+				}
+			},
+			{
+				"OptionTitle": "Human Form",
+				"OptionType": "OptionItem",
+				"Traits": ""
 			}
 		]
 	}

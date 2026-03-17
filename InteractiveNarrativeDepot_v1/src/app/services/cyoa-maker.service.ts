@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { OptionBaseInterface } from '../interfaces/option-base.interface';
-import { OptionGroupInterface } from '../interfaces/option-group.interface';
+import { OptionBaseInterface, OptionGroupInterface, OptionItemInterface } from '../interfaces/option.interface';
 import { CYOAViewerService } from './cyoa-viewer.service';
-import { OptionItemInterface } from '../interfaces/option-item.interface';
 
 @Injectable({
 	providedIn: 'root'

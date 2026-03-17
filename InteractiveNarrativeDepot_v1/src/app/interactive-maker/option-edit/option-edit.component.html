@@ -1,12 +1,16 @@
 <!------------------>
 <!-- Option Group -->
 <!------------------>
-<div class="group width-1 border-1">
+<div class="group full-width-1 border-1">
 	<!-- Group Title -->
-	<div class="full-width-1 vertical-margin-5 center">
+	<div class="full-width-1 vertical-margin-5 center"
+		 (click)="expandGroup()">
 		<h2>Group - {{ optionGroup.Title || "{ Unnamed }" }}</h2>
 	</div>
-	<!-- Group Title -->
+
+	@if (this.expanded) {
+
+	<!-- Group Title Input -->
 	<div class="full-width-1 vertical-margin-5">
 		<label class="width-1">Title</label>
 		<br />
@@ -33,6 +37,9 @@
 		<input type="number"
 			   class="full-width-5"
 			   [(ngModel)]="optionGroup.SelectionLimit">
+	</div>
+	<div class="full-width-1 vertical-margin-5">
+		<app-option-traits [(OptionGroup)]="optionGroup"></app-option-traits>
 	</div>
 	<!------------------>
 	<!-- Option Items -->
@@ -61,7 +68,7 @@
 			<textarea name="HeaderText"
 					  id="HeaderText"
 					  class="full-width-1"
-					  style="height: 50px;"
+					  style="resize: vertical; height: 50px;"
 					  [(ngModel)]="item.OptionText"></textarea>
 		</div>
 		<div class="full-width-1 vertical-margin-5">
@@ -89,4 +96,5 @@
 		<div class="button border-1"
 			 (click)="NewOption()">New Option</div>
 	</div>
+	}
 </div>

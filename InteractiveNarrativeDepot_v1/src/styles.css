@@ -46,11 +46,18 @@ h5 {
 	font-size: 18px;
 }
 
+.flex {
+	display: flex;
+	flex-wrap: wrap;
+	align-self: flex-start;
+	align-items: center stretch;
+}
+
 [class*="group"] {
 	display: flex;
 	flex-wrap: wrap;
 	align-self: flex-start;
-	align-items: center;
+	align-items: center stretch;
 	padding: 5px;
 	margin-top: 5px;
 	margin-bottom: 5px;
@@ -75,9 +82,14 @@ h5 {
 	margin: 1px;
 	padding: 10px 20px;
 	cursor: pointer;
+	user-select: none;
 }
 
 .selected {
+	background-color: lightblue;
+}
+
+.disabled {
 	background-color: gray;
 }
 
