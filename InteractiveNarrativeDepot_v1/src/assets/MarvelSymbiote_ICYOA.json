@@ -2,406 +2,399 @@
 	{
 		"Title": "Marvel Symbiote ICYOA",
 		"HeaderText": "There are creatures out there; terrifying, MONSTROUS lifeforms that seem to defy every law of biology and several concrete laws of physics. Klyntar, that is what they call themselves, but the people of Earth know them by a different term. Symbiotes, alien creatures that bond with and empower their hosts with superhuman abilities, often warping their minds and turning them into murderous predators of their own kind.<br><br>Fortunately, those who have appeared on Earth have not ALL shared this trait of inducing such impulses. Unfortunately, they are dangerous nonetheless. And so, after years of hunting the creatures down, they are now contained by the S.C.F. Officially known as the Symbiote Containment Force, a United States Agency that operates under the radar to secure and contain these dangerous lifeforms.<br><br>Sadly, like in the case of MANY similar organizations, their security was found staggeringly lacking. The result? The cataclysmic escape of numerous Symbiotes that were previously in custody, with one in particular being largely responsible.<br><br>Then, by some twist of fate, it is discovered by you.",
-		"OptionType": "OptionGroup",
+		"ItemType": "Group",
 		"OptionItems": [
 			{
 				"OptionTitle": "Potential",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "Potential"
 			},
 			{
 				"OptionTitle": "Universe",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "Universe"
 			},
 			{
 				"OptionTitle": "Character",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "Character"
 			},
 			{
 				"OptionTitle": "Symbiotes",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "Symbiotes"
 			},
 			{
 				"OptionTitle": "Abilities",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Items",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Companions",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Plot Lines",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Drawbacks",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Points",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Reward",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Information",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			}
 		]
 	},
 	{
 		"Title": "Potential",
-		"OptionType": "OptionGroup",
+		"ItemType": "Group",
 		"HeaderText": "Every <b>Host</b> has an innate potential that determines how powerful their <b>Klyntar</b> may start off or become. While this does not necessarily determine the Symbiotic <b>Compatibility</b> between them and their chosen Symbiote, it does grant them a higher chance to unlock dormant <b>Perks</b>, <b>Abilities</b>, and even <b>Gene Codex</b> entries.",
 		"SelectionLimit": "1",
 		"TraitsForVisible": {
-			"ValidationType": "Enable",
 			"MatchType": "All",
 			"Traits": "Potential"
 		},
 		"OptionItems": [
 			{
 				"OptionTitle": "Ancient",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Elder",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Matured",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Fledgling",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Nascent",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			}
 		]
 	},
 	{
 		"Title": "Universe",
-		"OptionType": "OptionGroup",
+		"ItemType": "Group",
 		"HeaderText": "This is where you may choose the World you will be entering, and traits related to them.<br>You may choose the specific time and place you'll appear, within your chosen Universe. e.g. before the start of the story, its middle, the end, etc.",
 		"TraitsForVisible": {
-			"ValidationType": "Enable",
 			"MatchType": "All",
 			"Traits": "Universe"
 		},
 		"OptionItems": [
 			{
 				"OptionTitle": "Worlds",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "Universe_World"
 			},
 			{
 				"OptionTitle": "Perks",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "Universe_Perks"
 			}
 		]
 	},
 	{
 		"Title": "Worlds",
-		"OptionType": "OptionGroup",
+		"ItemType": "Group",
 		"HeaderText": "",
 		"TraitsForVisible": {
-			"ValidationType": "Enable",
 			"MatchType": "All",
 			"Traits": "Universe_World"
 		},
 		"OptionItems": [
 			{
 				"OptionTitle": "Marvel",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "World_Marvel"
 			},
 			{
 				"OptionTitle": "Light-Super",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "World_Light-Super"
 			},
 			{
 				"OptionTitle": "Sci-Fi",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "World_Sci-Fi"
 			},
 			{
 				"OptionTitle": "Cyperpunk",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "World_Cyperpunk"
 			},
 			{
 				"OptionTitle": "Mecha",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "World_Mecha"
 			},
 			{
 				"OptionTitle": "DC",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "World_DC"
 			},
 			{
 				"OptionTitle": "Grim-Super",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "World_Grim-Super"
 			},
 			{
 				"OptionTitle": "Fantasy",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "World_Fantasy"
 			},
 			{
 				"OptionTitle": "Mythical",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "World_Mythical"
 			},
 			{
 				"OptionTitle": "Supernatural",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "World_Supernatural"
 			},
 			{
 				"OptionTitle": "Zombies",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "World_Zombies"
 			},
 			{
 				"OptionTitle": "Mundane",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "World_Mundane"
 			},
 			{
 				"OptionTitle": "Unlisted",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "World_Unlisted"
 			},
 			{
 				"OptionTitle": "Open All",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "World_All"
 			}
 		]
 	},
 	{
 		"Title": "The Marvel Pack",
-		"OptionType": "OptionGroup",
+		"ItemType": "Group",
 		"HeaderText": "These are Worlds set in its vast Multiverse.",
 		"SelectionLimit": "1",
 		"TraitsForVisible": {
-			"ValidationType": "Enable",
 			"MatchType": "Any",
 			"Traits": "World_Marvel,World_All"
 		},
 		"OptionItems": [
 			{
 				"OptionTitle": "Custom Marvel",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Spider-Man Games",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Venom Movies",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Blade",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Sam Reimi - Spider-Man",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Spider-Man Animated",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Spider-Verse",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "X-Men Animated",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "X-Men Movies",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "MCU",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Runaways",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "The Wastelands",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "1 Million BC",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Marvel Ultimate",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Earth 616",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			}
 		]
 	},
 	{
 		"Title": "The Boy Scout Pack",
-		"OptionType": "OptionGroup",
+		"ItemType": "Group",
 		"HeaderText": "Worlds where Super-powered individuals typically fight for what is right.",
 		"SelectionLimit": "1",
 		"TraitsForVisible": {
-			"ValidationType": "Enable",
 			"MatchType": "Any",
 			"Traits": "World_Light-Super,World_All"
 		},
 		"OptionItems": [
 			{
 				"OptionTitle": "Sam & Max",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Yu-Gi-Oh! GX",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "TMNT",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Overwatch",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Scott Pilgrim",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "The Incredibles",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Super Mario",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "My Hero Academia",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Steven Universe",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Street Fighter",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "She-Ra",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Kamen Rider",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Power Rangers",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "One Piece",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "JoJo",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Miraculous",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "PMD",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Pokémon",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Ben 10",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Sailor Moon",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Sonic",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "One-Punch Man",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Kirby",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			},
 			{
 				"OptionTitle": "Dragon Ball Z",
-				"OptionType": "OptionItem"
+				"ItemType": "OptionItem"
 			}
 		]
 	},
 	{
 		"Title": "Character",
-		"OptionType": "OptionGroup",
+		"ItemType": "Group",
 		"HeaderText": "This is where you will be able to design who you will be and your method of entry into the world you will soon inhabit.",
 		"SelectionLimit": null,
 		"TraitsForVisible": {
-			"ValidationType": "Enable",
 			"MatchType": "All",
 			"Traits": "Character"
 		},
 		"OptionItems": [
 			{
 				"OptionTitle": "Incarnation",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "Char_Incarnation"
 			}
 		]
 	},
 	{
 		"Title": "Incarnation",
-		"OptionType": "OptionGroup",
+		"ItemType": "Group",
 		"HeaderText": "This is how you will enter this world.",
-		"SelectionLimit": null,
+		"SelectionLimit": 1,
 		"TraitsForVisible": {
-			"ValidationType": "Enable",
 			"MatchType": "All",
 			"Traits": "Char_Incarnation"
 		},
@@ -409,66 +402,64 @@
 			{
 				"OptionTitle": "Reincarnation",
 				"OptionText": "You will be reborn in the world you'll soon inhabit. You may design your appearance and the age at which you regain your memories. You may also design your personality and the choices you made in life up until the very moment that you regain your memories.",
-				"OptionType": "OptionItem",
-				"Traits": "Char_Incarnation"
+				"ItemType": "Option",
+				"Traits": "Char_Incarnation_Reincar"
 			},
 			{
 				"OptionTitle": "Drop-In",
 				"OptionText": "You will be dropped into the world you will soon inhabit as you currently are or design your appearance. (You won't gain access to the full character creator.)<br><br>You may choose whether this is a literal drop, as in falling from the sky, or if you are simply teleported onto a back ally somewhere in the world.",
-				"OptionType": "OptionItem",
-				"Traits": "Char_Incarnation"
+				"ItemType": "Option",
+				"Traits": "Char_Incarnation_DropIn"
 			},
 			{
 				"OptionTitle": "Self-Insert",
 				"OptionText": "You may choose to take the place of a pre-existing person from the world you will soon inhabit. Whether this is the result of you taking over their mind and soul, merging with them, their untimely death leaving an opening for you to enter, or something else is up to your discretion. (You'll have limited access to the Character Creator.)",
-				"OptionType": "OptionItem",
-				"Traits": "Char_Incarnation"
+				"ItemType": "Option",
+				"Traits": "Char_Incarnation_SelfIns"
 			}
 		]
 	},
 	{
 		"Title": "Symbiotes",
-		"OptionType": "OptionGroup",
+		"ItemType": "Group",
 		"HeaderText": "Here you may choose your partner, their identity, and the nature of your relationship.",
 		"SelectionLimit": null,
 		"TraitsForVisible": {
-			"ValidationType": "Enable",
 			"MatchType": "All",
 			"Traits": "Symbiotes"
 		},
 		"OptionItems": [
 			{
 				"OptionTitle": "Klyntar",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "Symb_Klyntar"
 			},
 			{
 				"OptionTitle": "Identity",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "Symb_Identity"
 			},
 			{
 				"OptionTitle": "Relationship",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "Symb_Relation"
 			}
 		]
 	},
 	{
 		"Title": "Symbiote Identity",
-		"OptionType": "OptionGroup",
+		"ItemType": "Group",
 		"HeaderText": "Here you may choose your partner, their identity, and the nature of your relationship.",
 		"SelectionLimit": null,
 		"OptionItemsPerRow": "3",
 		"TraitsForVisible": {
-			"ValidationType": "Enable",
 			"MatchType": "All",
 			"Traits": "Symb_Identity"
 		},
 		"OptionItems": [
 			{
 				"OptionTitle": "Symbiote Sex: Male",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "Symb_Ident_SexMale",
 				"TraitsForNotEnabled": {
 					"MatchType": "Any",
@@ -477,7 +468,7 @@
 			},
 			{
 				"OptionTitle": "Symbiote Sex: Other",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "Symb_Ident_SexOther",
 				"TraitsForNotEnabled": {
 					"MatchType": "Any",
@@ -486,7 +477,7 @@
 			},
 			{
 				"OptionTitle": "Symbiote Sex: Female",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "Symb_Ident_SexFemale",
 				"TraitsForNotEnabled": {
 					"MatchType": "Any",
@@ -495,7 +486,7 @@
 			},
 			{
 				"OptionTitle": "Symbiote Gender: Masculine",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "Symb_Ident_GenderMasc",
 				"TraitsForNotEnabled": {
 					"MatchType": "Any",
@@ -504,7 +495,7 @@
 			},
 			{
 				"OptionTitle": "Symbiote Gender: Other",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "Symb_Ident_GenderOther",
 				"TraitsForNotEnabled": {
 					"MatchType": "Any",
@@ -513,7 +504,7 @@
 			},
 			{
 				"OptionTitle": "Symbiote Gender: Female",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "Symb_Ident_GenderFem",
 				"TraitsForNotEnabled": {
 					"MatchType": "Any",
@@ -522,7 +513,7 @@
 			},
 			{
 				"OptionTitle": "Aesthetic: Clothing",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "Symb_Ident_AesthCloth",
 				"TraitsForNotEnabled": {
 					"MatchType": "Any",
@@ -531,7 +522,7 @@
 			},
 			{
 				"OptionTitle": "Aesthetic: Classic",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "Symb_Ident_AesthClassic",
 				"TraitsForNotEnabled": {
 					"MatchType": "Any",
@@ -540,7 +531,7 @@
 			},
 			{
 				"OptionTitle": "Aesthetic: Slime",
-				"OptionType": "OptionItem",
+				"ItemType": "Option",
 				"Traits": "Symb_Ident_AesthSlime",
 				"TraitsForNotEnabled": {
 					"MatchType": "Any",
@@ -549,8 +540,8 @@
 			},
 			{
 				"OptionTitle": "Human Form",
-				"OptionType": "OptionItem",
-				"Traits": ""
+				"ItemType": "Option",
+				"Traits": "Symb_Ident_human"
 			}
 		]
 	}

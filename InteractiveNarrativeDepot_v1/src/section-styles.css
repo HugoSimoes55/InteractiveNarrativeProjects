@@ -75,6 +75,16 @@
 	margin-bottom: 5px;
 }
 
+[class*="group"] {
+	display: flex;
+	flex-wrap: wrap;
+	align-self: flex-start;
+	align-items: center stretch;
+	padding: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
 [class*="option"] {
 	/* align-self: stretch; */
 	padding: 3px;
@@ -82,7 +92,7 @@
 }
 
 .option-1 {
-	flex: 1 1 calc(100% - 2px);
+	flex: 1 1 auto;
 }
 
 .option-2 {

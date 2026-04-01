@@ -1,0 +1,44 @@
+<div class="group width-1 border-1">
+	<!------------------>
+	<!-- Group Item -->
+	<!------------------>
+	@if ((group.Title || group.HeaderText)
+	&& group.IsVisible) {
+
+	<div class="header-title"
+		 *ngIf="group.Title">
+		<h2>{{ group.Title }}</h2>
+	</div>
+	<div class="header-text"
+		 *ngIf="group.HeaderText">
+		<p [innerHTML]="group.HeaderText"></p>
+	</div>
+	}
+	<!------------------>
+	<!-- Option Items -->
+	<!------------------>
+	@if ( group.IsVisible
+	&& group.OptionItems.length > 0) {
+	<div *ngFor="let option of group.OptionItems"
+		 [class]=" 'option-' + ( group.OptionItemsPerRow || 5 ) + ' center border-1 no-highlight'"
+		 [ngClass]="{'selected': option.Selected, 'disabled': !option.IsEnabled}"
+		 (click)="OnSelectionClick(option)">
+
+		<div *ngIf="option.HasImage"
+			 class="clearBorder center image-control"
+			 [style.height]="option.MaxHeight + 'px'"
+			 [style.width]="option.MaxHeight + 'px'">
+			<img src="{{ option.ImageURL }}"
+				 alt="{{ option.ImageText }}">
+		</div>
+		<span style="font-size: 24px;">{{ option.OptionTitle }}</span>
+		<br>
+		<div *ngIf="option.OptionText"
+			 class=" vertical-margin-3">
+			<br>
+			<p [innerHTML]="option.OptionText"></p>
+			<br>
+		</div>
+	</div>
+	}
+</div>

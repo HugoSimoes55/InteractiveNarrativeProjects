@@ -1,10 +1,8 @@
-<!-- <div class="button border-1" (click)="EditModeChanged()">{{ EditModeMessage() }}</div> -->
-
 <div class="main">
-	<app-option-display *ngFor="let item of loadedGroups"
-						[Group]="item"></app-option-display>
+	<app-group-display *ngFor="let item of loadedGroups"
+					   [Group]="item"></app-group-display>
 	<div class="width-1 center">
-		<div class="button border-1"
+		<div class="button-l border-1"
 			 (click)="ResetSelections()">Reset Selections</div>
 	</div>
 </div>

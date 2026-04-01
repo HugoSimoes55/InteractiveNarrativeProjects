@@ -1,0 +1,154 @@
+<div *ngIf="!isGroup"
+	 class="full-width-1 vertical-margin-5 border-1 group"
+	 style="column-gap: 10px">
+	<div class="flex-item-side">
+		<label class="full-width-1">Traits</label>
+	</div>
+	<div class="flex-item-middle">
+		<input type="text"
+			   name="Traits"
+			   id="Traits"
+			   class="full-width-1"
+			   [(ngModel)]="item.Traits">
+	</div>
+	<div class="flex-item-side">
+		<div class="button-s border-1"
+			 (click)="ClearTraits('Traits')">Clear</div>
+	</div>
+</div>
+<div class="full-width-1 vertical-margin-5 border-1 group"
+	 style="column-gap: 10px">
+	<div class="flex-item-side">
+		<label class="full-width-1">Traits Needed <br> To Be Enabled</label>
+	</div>
+	<div class="flex-item-middle">
+		<input id="{{'anyEnable' + item.ID.toString()}}"
+			   type="radio"
+			   value="Any"
+			   name="{{'matchTypeEnable' + item.ID.toString()}}"
+			   [(ngModel)]="item.TraitsForEnabled.MatchType">
+		<label for="{{'anyEnable' + item.ID.toString()}}"
+			   style="margin-right: 25px;">Any</label>
+		<input id="{{'allEnable' + item.ID.toString()}}"
+			   type="radio"
+			   value="All"
+			   name="{{'matchTypeEnable' + item.ID.toString()}}"
+			   [(ngModel)]="item.TraitsForEnabled.MatchType">
+		<label for="{{'allEnable' + item.ID.toString()}}">All</label>
+		<br>
+		<br>
+		<label class="full-width-1">Trait List</label>
+		<br>
+		<textarea name="TraitsEnabled"
+				  id="TraitsEnabled"
+				  class="full-width-1"
+				  style="height: 50px; resize: vertical;"
+				  [(ngModel)]="item.TraitsForEnabled.Traits"></textarea>
+	</div>
+	<div class="flex-item-side">
+		<div class="button-s border-1"
+			 (click)="ClearTraits('Enabled')">Clear</div>
+	</div>
+</div>
+<div class="full-width-1 vertical-margin-5 border-1 group"
+	 style="column-gap: 10px">
+	<div class="flex-item-side">
+		<label class="full-width-1">Traits Preventing <br> Being Enabled</label>
+	</div>
+	<div class="flex-item-middle">
+		<input id="{{'anyNotEnable' + item.ID.toString()}}"
+			   type="radio"
+			   value="Any"
+			   name="{{'matchTypeNotEnable' + item.ID.toString()}}"
+			   [(ngModel)]="item.TraitsForNotEnabled.MatchType">
+		<label for="{{'anyNotEnable' + item.ID.toString()}}"
+			   style="margin-right: 25px;">Any</label>
+		<input id="{{'allNotEnable' + item.ID.toString()}}"
+			   type="radio"
+			   value="All"
+			   name="{{'matchTypeNotEnable' + item.ID.toString()}}"
+			   [(ngModel)]="item.TraitsForNotEnabled.MatchType">
+		<label for="{{'allNotEnable' + item.ID.toString()}}">All</label>
+		<br>
+		<br>
+		<label class="full-width-1">Trait List</label>
+		<br>
+		<textarea name="TraitsNotEnabled"
+				  id="TraitsNotEnabled"
+				  class="full-width-1"
+				  style="height: 50px; resize: vertical;"
+				  [(ngModel)]="item.TraitsForNotEnabled.Traits"></textarea>
+	</div>
+	<div class="flex-item-side">
+		<div class="button-s border-1"
+			 (click)="ClearTraits('NotEnabled')">Clear</div>
+	</div>
+</div>
+<div class="full-width-1 vertical-margin-5 border-1 group"
+	 style="column-gap: 10px">
+	<div class="flex-item-side">
+		<label class="full-width-1">Traits Needed <br> To Be Visible</label>
+	</div>
+	<div class="flex-item-middle">
+		<input id="{{'anyVisible' + item.ID.toString()}}"
+			   type="radio"
+			   value="Any"
+			   name="{{'matchTypeVisible' + item.ID.toString()}}"
+			   [(ngModel)]="item.TraitsForVisible.MatchType">
+		<label for="{{'anyVisible' + item.ID.toString()}}"
+			   style="margin-right: 25px;">Any</label>
+		<input id="{{'allVisible' + item.ID.toString()}}"
+			   type="radio"
+			   value="All"
+			   name="{{'matchTypeVisible' + item.ID.toString()}}"
+			   [(ngModel)]="item.TraitsForVisible.MatchType">
+		<label for="{{'allVisible' + item.ID.toString()}}">All</label>
+		<br>
+		<br>
+		<label class="full-width-1">Trait List</label>
+		<br>
+		<textarea name="TraitsVisible"
+				  id="TraitsVisible"
+				  class="full-width-1"
+				  style="height: 50px; resize: vertical;"
+				  [(ngModel)]="item.TraitsForVisible.Traits"></textarea>
+	</div>
+	<div class="flex-item-side">
+		<div class="button-s border-1"
+			 (click)="ClearTraits('Visible')">Clear</div>
+	</div>
+</div>
+<div class="full-width-1 vertical-margin-5 border-1 group"
+	 style="column-gap: 10px">
+	<div class="flex-item-side">
+		<label class="full-width-1">Traits Preventing <br> Being Visible</label>
+	</div>
+	<div class="flex-item-middle">
+		<input id="{{'anyNotVisible' + item.ID.toString()}}"
+			   type="radio"
+			   value="Any"
+			   name="{{'matchTypeNotVisible' + item.ID.toString()}}"
+			   [(ngModel)]="item.TraitsForNotVisible.MatchType">
+		<label for="{{'anyNotVisible' + item.ID.toString()}}"
+			   style="margin-right: 25px;">Any</label>
+		<input id="{{'allNotVisible' + item.ID.toString()}}"
+			   type="radio"
+			   value="All"
+			   name="{{'matchTypeNotVisible' + item.ID.toString()}}"
+			   [(ngModel)]="item.TraitsForNotVisible.MatchType">
+		<label for="{{'allNotVisible' + item.ID.toString()}}">All</label>
+		<br>
+		<br>
+		<label class="full-width-1">Trait List</label>
+		<br>
+		<textarea name="TraitsNotVisible"
+				  id="TraitsNotVisible"
+				  class="full-width-1"
+				  style="height: 50px; resize: vertical;"
+				  [(ngModel)]="item.TraitsForNotVisible.Traits"></textarea>
+	</div>
+	<div class="flex-item-side">
+		<div class="button-s border-1"
+			 (click)="ClearTraits('NotVisible')">Clear</div>
+	</div>
+</div>

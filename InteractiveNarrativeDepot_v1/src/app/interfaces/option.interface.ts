@@ -1,10 +1,10 @@
 import { TraitValidationInterface } from "./trait-validation.interface";
 
-export interface OptionBaseInterface {
+export interface BaseItemInterface {
 
 	ID: string;
 	Title: string;
-	OptionType: string;
+	ItemType: string;
 
 	HasImage: boolean;
 	ImageURL: string;
@@ -22,7 +22,7 @@ export interface OptionBaseInterface {
 	IsVisible: boolean;
 }
 
-export interface OptionGroupInterface extends OptionBaseInterface {
+export interface GroupItemInterface extends BaseItemInterface {
 
 	HeaderText: string;
 	OptionItems: OptionItemInterface[];
@@ -30,7 +30,7 @@ export interface OptionGroupInterface extends OptionBaseInterface {
 	SelectionLimit: number;
 }
 
-export interface OptionItemInterface extends OptionBaseInterface {
+export interface OptionItemInterface extends BaseItemInterface {
 
 	OptionTitle: string;
 	OptionText: string;

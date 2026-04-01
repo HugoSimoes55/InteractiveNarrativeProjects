@@ -5,20 +5,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InteractiveViewerComponent } from './interactive-viewer/interactive-viewer.component';
-import { OptionDisplayComponent } from './interactive-viewer/option-display/option-display.component';
+import { GroupDisplayComponent } from './interactive-viewer/group-display/group-display.component';
 import { InteractiveMakerComponent } from './interactive-maker/interactive-maker.component';
-import { OptionEditComponent } from './interactive-maker/option-edit/option-edit.component';
+import { GroupEditComponent } from './interactive-maker/group-edit/group-edit.component';
 import { FormsModule } from '@angular/forms';
-import { OptionTraitsComponent } from './interactive-maker/option-edit/option-traits/option-traits.component';
+import { ItemTraitsComponent } from './interactive-maker/item-traits/item-traits.component';
+import { ConsoleLoggerService } from './services/console-logger.service';
+import { LoggerService } from './services/logger.service';
+import { OptionEditComponent } from './interactive-maker/group-edit/option-edit/option-edit.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		InteractiveViewerComponent,
-		OptionDisplayComponent,
+		GroupDisplayComponent,
 		InteractiveMakerComponent,
-		OptionEditComponent,
-		OptionTraitsComponent
+		GroupEditComponent,
+		ItemTraitsComponent,
+  OptionEditComponent
 	],
 	imports: [
 		BrowserModule,
@@ -26,7 +30,7 @@ import { OptionTraitsComponent } from './interactive-maker/option-edit/option-tr
 		HttpClientModule,
 		FormsModule
 	],
-	providers: [],
+	providers: [{ provide: LoggerService, useClass: ConsoleLoggerService }],
 	bootstrap: [
 		AppComponent
 	]

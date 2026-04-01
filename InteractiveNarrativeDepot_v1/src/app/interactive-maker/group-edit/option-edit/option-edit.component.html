@@ -1,0 +1,43 @@
+<div class="full-width-1 vertical-margin-5">
+	<label>Title
+	</label>
+	<br />
+	<input type="text"
+		   name="Title"
+		   id="Title"
+		   class="full-width-1"
+		   [(ngModel)]="option.OptionTitle">
+</div>
+<div class="full-width-1 vertical-margin-5">
+	<label class="full-width-1">Option Text
+	</label>
+	<br />
+	<textarea name="HeaderText"
+			  id="HeaderText"
+			  class="full-width-1"
+			  style="resize: vertical; height: 50px;"
+			  [(ngModel)]="option.OptionText"></textarea>
+</div>
+<!-- <div class="full-width-1 vertical-margin-5">
+	<label class="full-width-1">Traits
+	</label>
+	<br />
+	<input type="text"
+		   name="Traits"
+		   id="Traits"
+		   class="full-width-1"
+		   [(ngModel)]="option.Traits">
+</div> -->
+<div *ngIf="option.HasImage"
+	 class="width-1 vertical-margin-5">
+	<div class="clearBorder center image-control"
+		 [style.height]="option.MaxHeight + 'px'"
+		 [style.width]="option.MaxHeight + 'px'">
+		<img src="{{ option.ImageURL }}"
+			 alt="{{ option.ImageText }}">
+	</div>
+</div>
+<!-- Option Traits -->
+<div class="full-width-1 vertical-margin-5">
+	<app-item-traits [(Item)]="option"></app-item-traits>
+</div>

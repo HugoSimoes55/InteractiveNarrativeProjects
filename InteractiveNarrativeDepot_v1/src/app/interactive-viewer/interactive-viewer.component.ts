@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OptionGroupInterface } from '../interfaces/option.interface';
+import { GroupItemInterface } from '../interfaces/option.interface';
 import { CYOAViewerService } from '../services/cyoa-viewer.service';
 
 @Component({
@@ -9,15 +9,15 @@ import { CYOAViewerService } from '../services/cyoa-viewer.service';
 })
 export class InteractiveViewerComponent implements OnInit {
 
-	loadedGroups: OptionGroupInterface[] = [];
+	loadedGroups: GroupItemInterface[] = [];
 
 	constructor(private cyoaServ: CYOAViewerService) {
 
 	}
 
 	ngOnInit() {
-		this.cyoaServ.VisibleOptionsEvent.subscribe((data) => {
-			this.loadedGroups = data as OptionGroupInterface[];
+		this.cyoaServ.VisibleItemsEvent.subscribe((data) => {
+			this.loadedGroups = data as GroupItemInterface[];
 		});
 	}
 

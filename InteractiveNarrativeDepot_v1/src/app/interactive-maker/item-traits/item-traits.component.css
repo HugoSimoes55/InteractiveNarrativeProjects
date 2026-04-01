@@ -1,0 +1,9 @@
+.flex-item-side {
+	flex: 0 1;
+	align-content: center;
+}
+
+.flex-item-middle {
+	flex: 1 1 40%;
+	align-content: center;
+}

@@ -1,63 +1,64 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { OptionSearchType } from '../Enums/option-search-type.enum';
-import { OptionBaseInterface, OptionGroupInterface, OptionItemInterface } from '../interfaces/option.interface';
+import { ItemSearchType } from '../Enums/misc.enum';
+import { BaseItemInterface, GroupItemInterface, OptionItemInterface } from '../interfaces/option.interface';
 import { TraitValidationInterface } from '../interfaces/trait-validation.interface';
+import { LoggerService } from './logger.service';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class CYOAViewerService {
 
-	private ViewerGroups: OptionGroupInterface[] = [];
+	private ViewerGroups: GroupItemInterface[] = [];
 
-	public AllOptionsEvent: BehaviorSubject<OptionBaseInterface[]> = new BehaviorSubject(this.ViewerGroups);
-	public VisibleOptionsEvent: BehaviorSubject<OptionBaseInterface[]> = new BehaviorSubject(this.ViewerGroups.filter(x => x.IsVisible));
+	public AllItemsEvent: BehaviorSubject<BaseItemInterface[]> = new BehaviorSubject(this.ViewerGroups);
+	public VisibleItemsEvent: BehaviorSubject<BaseItemInterface[]> = new BehaviorSubject(this.ViewerGroups.filter(x => x.IsVisible));
 
 	public AllTraits: string[] = null;
 	private SelectedTraits: string[] = [];
+	private SelectedVisibleTraits: string[] = [];
 
 	private EmptyImage: string = "assets/images/NoImageAvailable.png";
 
-	constructor() {
+	constructor(private logger: LoggerService) {
 
 	}
 
 	LoadJsonData(jsonText: string) {
+		this.logger.Debug("Viewer - LoadJsonData");
+
 		this.UpdateViewerGroups(JSON.parse(jsonText));
 	}
 
-	UpdateViewerGroups(newGroups: OptionGroupInterface[]) {
+	UpdateViewerGroups(newGroups: GroupItemInterface[]) {
+		this.logger.Debug("Viewer - UpdateViewerGroups Started");
+
 		this.ViewerGroups = newGroups;
 
-		this.InitializeViewerAttributes();
-
-		this.GenerateIDs();
+		this.logger.Debug("Viewer - Groups Loaded", this.ViewerGroups);
 
 		this.ValidateRequirements();
 	}
 
-	private InitializeViewerAttributes() {
-		this.ViewerGroups.forEach((group: OptionGroupInterface) => {
-			group.OptionItemsPerRow = (group.OptionItemsPerRow || 5);
-		});
-	}
-
 	private UpdateSubjects() {
-		this.AllOptionsEvent.next(this.ViewerGroups);
-		this.VisibleOptionsEvent.next(this.ViewerGroups.filter(x => x.IsVisible));
+		this.logger.Debug("Viewer - UpdateSubjects Started");
+
+		this.AllItemsEvent.next(this.ViewerGroups);
+		this.VisibleItemsEvent.next(this.ViewerGroups.filter(x => x.IsVisible));
 	}
 
-	SelectOption(optionItem: OptionItemInterface) {
+	SelectOption(option: OptionItemInterface) {
+		this.logger.Debug("Viewer - SelectOption Started", option);
 
-		let selectedGroup: OptionGroupInterface = this.FindOption(optionItem.ID, OptionSearchType.GetOptionGroupByItemID);
+		let selectedGroup: GroupItemInterface = this.FindOption(option.ID, ItemSearchType.GetGroupByItemID);
 
 		let selectCount: number = selectedGroup.OptionItems.filter((option: OptionItemInterface) => option.Selected).length;
-		let deselection: boolean = selectedGroup.OptionItems.filter((option: OptionItemInterface) => option.Selected && option.ID == optionItem.ID).length == 1;
+		let deselection: boolean = selectedGroup.OptionItems.filter((option: OptionItemInterface) => option.Selected && option.ID == option.ID).length == 1;
 
 		if (selectCount < (selectedGroup.SelectionLimit || 999)
 			|| deselection) {
-			selectedGroup.OptionItems.find((option: OptionItemInterface) => option.ID == optionItem.ID).Selected = !optionItem.Selected;
+			selectedGroup.OptionItems.find((option: OptionItemInterface) => option.ID == option.ID).Selected = !option.Selected;
 
 			//this.ViewerGroups.find((group) => group.ID == selectedGroup.ID)[0] = selectedGroup;
 
@@ -66,8 +67,9 @@ export class CYOAViewerService {
 	}
 
 	ResetSelections() {
+		this.logger.Debug("Viewer - ResetSelections Started");
 
-		this.ViewerGroups.forEach((group: OptionGroupInterface) => {
+		this.ViewerGroups.forEach((group: GroupItemInterface) => {
 			group.OptionItems.forEach((option: OptionItemInterface) => {
 				option.Selected = false;
 			});
@@ -80,32 +82,12 @@ export class CYOAViewerService {
 	///// ID //////
 	///////////////
 
-	private GenerateIDs() {
-		let i1: number = 1;
-
-		this.ViewerGroups.forEach((opGroup: OptionGroupInterface) => {
-			opGroup.ID = i1.toString();
-
-			if (opGroup.OptionItems.length > 0) {
-				let i2: number = 1;
-
-				opGroup.OptionItems.forEach((opItem: OptionItemInterface) => {
-					opItem.ID = i1.toString() + "_" + i2.toString();
-
-					i2++;
-				});
-			}
-
-			i1++;
-		});
-	}
-
-	private FindOption(optionID: string, optionSearch: OptionSearchType) {
-		if (optionSearch == OptionSearchType.GetOptionGroupByItemID) {
+	private FindOption(optionID: string, optionSearch: ItemSearchType) {
+		if (optionSearch == ItemSearchType.GetGroupByItemID) {
 
 			let groupID = optionID.substring(0, optionID.lastIndexOf("_"));
 
-			return this.ViewerGroups.find((group) => group.ID == groupID) as OptionGroupInterface;
+			return this.ViewerGroups.find((group) => group.ID == groupID) as GroupItemInterface;
 		}
 	}
 
@@ -114,12 +96,13 @@ export class CYOAViewerService {
 	///////////////////
 
 	private ValidateRequirements() {
+		this.logger.Debug("Viewer - ValidateRequirements Started");
 
 		this.LoadSelectedTraits();
 
-		this.ValidateEnabledOptions();
+		this.ValidateEnabledItems();
 
-		this.ValidateVisibleOptions();
+		this.ValidateVisibleItems();
 
 		this.GetAllTraits();
 
@@ -146,42 +129,29 @@ export class CYOAViewerService {
 	}
 
 	private LoadSelectedTraits() {
+		this.logger.Debug("Viewer - LoadSelectedTraits Started");
+
 		this.SelectedTraits = [];
+		this.SelectedVisibleTraits = [];
 
 		this.ViewerGroups.filter(group => group.OptionItems.length > 0).forEach(
 			(group) => group.OptionItems.filter((item) => item.Selected && item.Traits?.length > 0).forEach(
-				item => this.SelectedTraits.push(item.Traits)
+				item => {
+					this.SelectedTraits.push(item.Traits)
+
+					if (item.IsVisible
+						&& group.IsVisible) {
+						this.SelectedVisibleTraits.push(item.Traits);
+					}
+				}
 			)
 		);
 
-		console.log("These are the selected traits:");
-		console.log(this.SelectedTraits);
+		this.logger.Debug("Viewer - Selected traits are", this.SelectedTraits);
 	}
 
-	// private ValidateEnabledOptions() {
-	// 	this.ViewerGroups.forEach((group) => {
-	// 		let groupEnabled = true;
-
-	// 		// Add group validation code here
-
-	// 		group.IsEnabled = groupEnabled;
-
-	// 		group.OptionItems.forEach((item) => {
-	// 			if (!groupEnabled) {
-	// 				item.IsEnabled = false;
-	// 				return;
-	// 			}
-
-	// 			let itemEnabled = true;
-
-	// 			// Add item validation code here
-
-	// 			item.IsEnabled = itemEnabled;
-	// 		});
-	// 	});
-	// }
-
-	private ValidateEnabledOptions() {
+	private ValidateEnabledItems() {
+		this.logger.Debug("Viewer - ValidateEnabledItems Started");
 
 		this.ViewerGroups.forEach((group) => {
 			// let groupNotEnable: TraitValidationInterface = group.TraitsForNotEnabled;
@@ -203,35 +173,36 @@ export class CYOAViewerService {
 
 			// group.IsEnabled = groupEnableBool;
 
-			group.OptionItems.forEach((item: OptionItemInterface) => {
-				let itemNotEnable: TraitValidationInterface = item.TraitsForNotEnabled;
+			group.OptionItems.forEach((option: OptionItemInterface) => {
+				let optionNotEnable: TraitValidationInterface = option.TraitsForNotEnabled;
 
-				let itemNotEnableBool: boolean = this.GenericValidateTraits(itemNotEnable);
+				let optionNotEnableBool: boolean = this.GenericValidateTraits(optionNotEnable, this.SelectedTraits);
 
-				if (itemNotEnable
-					&& itemNotEnableBool) {
-					item.IsEnabled = false;
+				if (Object.keys(optionNotEnable).length > 0
+					&& optionNotEnableBool) {
+					option.IsEnabled = false;
 				}
 				else {
-					let itemEnable: TraitValidationInterface = item.TraitsForEnabled;
+					let optionEnable: TraitValidationInterface = option.TraitsForEnabled;
 
-					let itemEnableBool: boolean = this.GenericValidateTraits(itemEnable);
+					let optionEnableBool: boolean = this.GenericValidateTraits(optionEnable, this.SelectedTraits);
 
-					item.IsEnabled = itemEnableBool;
+					option.IsEnabled = optionEnableBool;
 				}
 			});
 			// }
 		});
 	}
 
-	private ValidateVisibleOptions() {
+	private ValidateVisibleItems() {
+		this.logger.Debug("Viewer - ValidateVisibleItems Started");
 
 		this.ViewerGroups.forEach((group) => {
 			let groupNotVis: TraitValidationInterface = group.TraitsForNotVisible;
 
-			let groupNotVisBool: boolean = this.GenericValidateTraits(groupNotVis);
+			let groupNotVisBool: boolean = this.GenericValidateTraits(groupNotVis, this.SelectedVisibleTraits);
 
-			if (groupNotVis
+			if (Object.keys(groupNotVis).length > 0
 				&& groupNotVisBool) {
 				group.IsVisible = false;
 
@@ -242,33 +213,47 @@ export class CYOAViewerService {
 			else {
 				let groupVis: TraitValidationInterface = group.TraitsForVisible;
 
-				let groupVisBool: boolean = this.GenericValidateTraits(groupVis);
+				let groupVisBool: boolean = this.GenericValidateTraits(groupVis, this.SelectedVisibleTraits);
 
 				group.IsVisible = groupVisBool;
 
-				group.OptionItems.forEach((item: OptionItemInterface) => {
-					let itemNotVis: TraitValidationInterface = item.TraitsForNotVisible;
+				group.OptionItems.forEach((option: OptionItemInterface) => {
+					let optionNotVis: TraitValidationInterface = option.TraitsForNotVisible;
 
-					let itemNotVisBool: boolean = this.GenericValidateTraits(itemNotVis);
+					let optionNotVisBool: boolean = this.GenericValidateTraits(optionNotVis, this.SelectedVisibleTraits);
 
-					if (itemNotVis
-						&& itemNotVisBool) {
-						item.IsVisible = false;
+					if (Object.keys(optionNotVis).length > 0
+						&& optionNotVisBool) {
+						option.IsVisible = false;
 					}
 					else {
-						let itemVis: TraitValidationInterface = item.TraitsForVisible;
+						let optionVis: TraitValidationInterface = option.TraitsForVisible;
 
-						let itemVisBool: boolean = this.GenericValidateTraits(itemVis);
+						let optionVisBool: boolean = this.GenericValidateTraits(optionVis, this.SelectedVisibleTraits);
 
-						item.IsVisible = itemVisBool;
+						option.IsVisible = optionVisBool;
 					}
 				});
 			}
 		});
+
+		this.logger.Debug("Viewer - Groups Updated", this.ViewerGroups);
+
+		let oldTraits = this.SelectedVisibleTraits;
+		this.LoadSelectedTraits();
+
+		if (oldTraits.length !== this.SelectedVisibleTraits.length
+			|| !oldTraits.every((value, index) => value === this.SelectedVisibleTraits[index])) {
+			this.ValidateRequirements();
+		}
 	}
 
-	private GenericValidateTraits(val: TraitValidationInterface): boolean {
-		if (!val) {
+	private GenericValidateTraits(val: TraitValidationInterface, traits: string[]): boolean {
+		this.logger.Debug("Viewer - GenericValidateTraits Started");
+
+		if (!val
+			|| !val.Traits
+		) {
 			return true;
 		}
 
@@ -278,7 +263,7 @@ export class CYOAViewerService {
 		let matchCount: number = 0;
 
 		valTraits.forEach((trait) => {
-			if (this.SelectedTraits.includes(trait)) {
+			if (traits.includes(trait)) {
 				matchCount++;
 			};
 		});

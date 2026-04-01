@@ -1,22 +1,28 @@
-<!------------------>
-<!-- Option Group -->
-<!------------------>
+<!---------------->
+<!-- Group Item -->
+<!---------------->
 <div class="group full-width-1 border-1">
 	<!-- Group Title -->
-	<div class="full-width-1 vertical-margin-5 center"
+	<div class="vertical-margin-5 center no-highlight"
+		 style="flex: 9; cursor: pointer;"
 		 (click)="expandGroup()">
-		<h2>Group - {{ optionGroup.Title || "{ Unnamed }" }}</h2>
+		<h2>{{ group.Title || "{ Unnamed }" }}</h2>
+	</div>
+	<div class="vertical-margin-5 center no-highlight "
+		 style="flex: 1; cursor: pointer; align-content: center;"
+		 (click)="expandGroup()">
+		<img [src]="this.expanded ? this.minusIcon : this.plusIcon"
+			 width="25px">
 	</div>
 
 	@if (this.expanded) {
-
 	<!-- Group Title Input -->
 	<div class="full-width-1 vertical-margin-5">
 		<label class="width-1">Title</label>
 		<br />
 		<input type="text"
 			   class="full-width-1"
-			   [(ngModel)]="optionGroup.Title">
+			   [(ngModel)]="group.Title">
 
 	</div>
 	<!-- Group Header -->
@@ -26,9 +32,8 @@
 		<textarea name="HeaderText"
 				  id="HeaderText"
 				  class="full-width-1"
-				  style="height: 150px;"
-				  [(ngModel)]="optionGroup.HeaderText"></textarea>
-
+				  style="height: 150px; resize: vertical;"
+				  [(ngModel)]="group.HeaderText"></textarea>
 	</div>
 	<!-- Group Selection Limit -->
 	<div class="full-width-1 vertical-margin-5">
@@ -36,19 +41,20 @@
 		<br />
 		<input type="number"
 			   class="full-width-5"
-			   [(ngModel)]="optionGroup.SelectionLimit">
+			   [(ngModel)]="group.SelectionLimit">
 	</div>
+	<!-- Group Traits -->
 	<div class="full-width-1 vertical-margin-5">
-		<app-option-traits [(OptionGroup)]="optionGroup"></app-option-traits>
+		<app-item-traits [(Item)]="group"></app-item-traits>
 	</div>
 	<!------------------>
 	<!-- Option Items -->
 	<!------------------>
-	<div class="option-1 center">
+	<div class="full-width-1 center">
 		<h2>Options</h2>
 	</div>
 
-	<div *ngFor="let item of optionGroup.OptionItems"
+	<!-- <div *ngFor="let option of group.OptionItems"
 		 class="option-2 border-1">
 
 		<div class="full-width-1 vertical-margin-5">
@@ -59,7 +65,7 @@
 				   name="Title"
 				   id="Title"
 				   class="full-width-1"
-				   [(ngModel)]="item.OptionTitle">
+				   [(ngModel)]="option.OptionTitle">
 		</div>
 		<div class="full-width-1 vertical-margin-5">
 			<label class="full-width-1">Option Text
@@ -69,7 +75,7 @@
 					  id="HeaderText"
 					  class="full-width-1"
 					  style="resize: vertical; height: 50px;"
-					  [(ngModel)]="item.OptionText"></textarea>
+					  [(ngModel)]="option.OptionText"></textarea>
 		</div>
 		<div class="full-width-1 vertical-margin-5">
 			<label class="full-width-1">Traits
@@ -79,21 +85,25 @@
 				   name="Traits"
 				   id="Traits"
 				   class="full-width-1"
-				   [(ngModel)]="item.Traits">
+				   [(ngModel)]="option.Traits">
 		</div>
 		<div class="width-1 vertical-margin-5">
-			<div *ngIf="item.hasImage"
+			<div *ngIf="option.HasImage"
 				 class="clearBorder center image-control"
-				 [style.height]="item.MaxHeight + 'px'"
-				 [style.width]="item.MaxHeight + 'px'">
-				<img src="{{ item.ImageURL }}"
-					 alt="{{ item.ImageText }}">
+				 [style.height]="option.MaxHeight + 'px'"
+				 [style.width]="option.MaxHeight + 'px'">
+				<img src="{{ option.ImageURL }}"
+					 alt="{{ option.ImageText }}">
 			</div>
 		</div>
-	</div>
+	</div> -->
+
+	<app-option-edit *ngFor="let option of group.OptionItems"
+					 class="option-2 border-1"
+					 [(Option)]="option"></app-option-edit>
 
 	<div class="width-1">
-		<div class="button border-1"
+		<div class="button-l border-1"
 			 (click)="NewOption()">New Option</div>
 	</div>
 	}

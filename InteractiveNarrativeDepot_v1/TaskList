@@ -17,27 +17,42 @@ DONE - Make generic find algorithm for option items
 
 
 DONE - Add Requirement Trait property and funcionality
-Add recursive group and option validation
-
-Create JSON Maker
-
-Maker: Make groups expandable and retractable
-Freeze current group at the top of the page (similar to freezing panes on excel)
-Alternatively, have a menu on the side with bookmarks to all titled groups
+DONE - Add recursive group and option validation
+Check if Trait validation can be refactored
 
 
-Add logging
+
+DONE - Maker: Make groups expandable and retractable
+N/A - Freeze current group at the top of the page (similar to freezing panes on excel)
+N/A - Alternatively, have a menu on the side with bookmarks to all titled groups
+DONE - Added expandable groups to Maker
+
+
+DONE - Rename properties to stop using Option for general names. Change to GroupItem and OptionItem.
+
+
+DONE - Add Component to manipulate Traits
+Separate OptionItems to separate component
+Fix TraitsComponent in OptionItemsComponent
+
+
+Try to swap textarea with ContentEditable Divs
+
+
+DONE - Add logging
 
 
 Add point manipulation 
 
+
+Change Group and Option CSS classes to use flex and row-gap/column-gap
 
 Static background image
 Dark/Light Modes
 CSS in json
 
 
-Add Save and Load for Options
+Add Save and Load for Json files
 Save only selected options that meet requirements
 
 
