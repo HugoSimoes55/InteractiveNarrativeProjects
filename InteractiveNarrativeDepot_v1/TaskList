@@ -36,7 +36,7 @@ Separate OptionItems to separate component
 Fix TraitsComponent in OptionItemsComponent
 
 
-Try to swap textarea with ContentEditable Divs
+Try to swap textarea with ContentEditable Divs or more advanced text manipulation controls
 
 
 DONE - Add logging

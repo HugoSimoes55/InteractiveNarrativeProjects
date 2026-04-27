@@ -48,17 +48,17 @@ export class CYOAViewerService {
 		this.VisibleItemsEvent.next(this.ViewerGroups.filter(x => x.IsVisible));
 	}
 
-	SelectOption(option: OptionItemInterface) {
-		this.logger.Debug("Viewer - SelectOption Started", option);
+	SelectOption(selectedOption: OptionItemInterface) {
+		this.logger.Debug("Viewer - SelectOption Started", selectedOption);
 
-		let selectedGroup: GroupItemInterface = this.FindOption(option.ID, ItemSearchType.GetGroupByItemID);
+		let selectedGroup: GroupItemInterface = this.FindOption(selectedOption.ID, ItemSearchType.GetGroupByItemID);
 
 		let selectCount: number = selectedGroup.OptionItems.filter((option: OptionItemInterface) => option.Selected).length;
-		let deselection: boolean = selectedGroup.OptionItems.filter((option: OptionItemInterface) => option.Selected && option.ID == option.ID).length == 1;
+		let deselection: boolean = selectedGroup.OptionItems.filter((option: OptionItemInterface) => option.Selected && option.ID == selectedOption.ID).length == 1;
 
 		if (selectCount < (selectedGroup.SelectionLimit || 999)
 			|| deselection) {
-			selectedGroup.OptionItems.find((option: OptionItemInterface) => option.ID == option.ID).Selected = !option.Selected;
+			selectedGroup.OptionItems.find((option: OptionItemInterface) => option.ID == selectedOption.ID).Selected = !selectedOption.Selected;
 
 			//this.ViewerGroups.find((group) => group.ID == selectedGroup.ID)[0] = selectedGroup;
 

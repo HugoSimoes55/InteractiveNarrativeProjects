@@ -22,7 +22,7 @@ import { OptionEditComponent } from './interactive-maker/group-edit/option-edit/
 		InteractiveMakerComponent,
 		GroupEditComponent,
 		ItemTraitsComponent,
-  OptionEditComponent
+		OptionEditComponent
 	],
 	imports: [
 		BrowserModule,

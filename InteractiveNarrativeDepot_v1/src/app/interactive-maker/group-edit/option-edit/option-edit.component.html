@@ -1,3 +1,6 @@
+<div class="full-width-1 vertical-margin-5 center">
+	<h3>{{ option.OptionTitle || "{ Unnamed }" }}</h3>
+</div>
 <div class="full-width-1 vertical-margin-5">
 	<label>Title
 	</label>
@@ -18,16 +21,6 @@
 			  style="resize: vertical; height: 50px;"
 			  [(ngModel)]="option.OptionText"></textarea>
 </div>
-<!-- <div class="full-width-1 vertical-margin-5">
-	<label class="full-width-1">Traits
-	</label>
-	<br />
-	<input type="text"
-		   name="Traits"
-		   id="Traits"
-		   class="full-width-1"
-		   [(ngModel)]="option.Traits">
-</div> -->
 <div *ngIf="option.HasImage"
 	 class="width-1 vertical-margin-5">
 	<div class="clearBorder center image-control"
